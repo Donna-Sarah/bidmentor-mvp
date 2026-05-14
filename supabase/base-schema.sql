@@ -1,5 +1,5 @@
 -- ============================================================
--- BIDMENTOR — Base schema
+-- BIDMENTOR - Base schema
 -- Run this first on a fresh Supabase project.
 -- Then run supabase/schema-patches.sql.
 -- ============================================================

@@ -1,5 +1,5 @@
 -- ============================================================
--- BIDMENTOR — Schema additions / patches
+-- BIDMENTOR - Schema additions / patches
 -- Run after supabase/base-schema.sql
 -- ============================================================
 
@@ -66,9 +66,9 @@ insert into public.lessons (
   0,
   'quy-trinh',
   ARRAY['đấu thầu', 'HSMT', 'nhà thầu', 'chủ đầu tư', 'quy trình']::text[],
-  $objective_1$Sau bài này bạn sẽ hiểu đấu thầu là gì, ai tham gia, quy trình tổng quan diễn ra như thế nào — và biết mình đang đứng ở đâu trong bức tranh lớn đó.$objective_1$,
-  $explanation_1$Đấu thầu đơn giản là một cuộc thi: nhiều công ty cùng nộp hồ sơ để giành quyền thực hiện một dự án. Bên tổ chức cuộc thi gọi là Chủ đầu tư (Employer/Owner), bên tham gia gọi là Nhà thầu (Bidder/Contractor). Ai đáp ứng yêu cầu tốt nhất — về năng lực, giá cả, kỹ thuật — thường sẽ thắng. Quy trình này được thiết kế để minh bạch và công bằng, đặc biệt trong các dự án dùng ngân sách nhà nước.$explanation_1$,
-  $content_1$## Đấu thầu là gì — giải thích không cần luật
+  $objective_1$Sau bài này bạn sẽ hiểu đấu thầu là gì, ai tham gia, quy trình tổng quan diễn ra như thế nào - và biết mình đang đứng ở đâu trong bức tranh lớn đó.$objective_1$,
+  $explanation_1$Đấu thầu đơn giản là một cuộc thi: nhiều công ty cùng nộp hồ sơ để giành quyền thực hiện một dự án. Bên tổ chức cuộc thi gọi là Chủ đầu tư (Employer/Owner), bên tham gia gọi là Nhà thầu (Bidder/Contractor). Ai đáp ứng yêu cầu tốt nhất - về năng lực, giá cả, kỹ thuật - thường sẽ thắng. Quy trình này được thiết kế để minh bạch và công bằng, đặc biệt trong các dự án dùng ngân sách nhà nước.$explanation_1$,
+  $content_1$## Đấu thầu là gì - giải thích không cần luật
 
 Hãy hình dung thế này: một bệnh viện cần mua 200 máy tính mới. Thay vì gọi thẳng một nhà cung cấp quen, họ phát thông báo ra ngoài: "Chúng tôi cần mua 200 máy tính, ai muốn bán thì nộp hồ sơ." Nhiều công ty cùng nộp. Bệnh viện chọn công ty đáp ứng đủ yêu cầu với giá tốt nhất.
 
@@ -82,22 +82,22 @@ Quy mô có thể từ vài trăm triệu đến hàng nghìn tỷ đồng. Lo�
 
 ## Ai tham gia?
 
-### Bên A — Chủ đầu tư (Employer / Owner / Contracting Authority)
+### Bên A - Chủ đầu tư (Employer / Owner / Contracting Authority)
 Là đơn vị có nhu cầu mua hàng hóa, dịch vụ hoặc xây dựng công trình. Họ:
-- Phát hành HSMT (Hồ sơ mời thầu — Bidding Document)
+- Phát hành HSMT (Hồ sơ mời thầu - Bidding Document)
 - Đặt ra các yêu cầu về năng lực, kỹ thuật, tài chính
 - Chấm điểm và lựa chọn nhà thầu trúng thầu
 
 Ví dụ: Sở Y tế Hà Nội, Tập đoàn Điện lực EVN, một ngân hàng thương mại lớn.
 
-### Bên B — Nhà thầu (Bidder / Contractor / Tenderer)
+### Bên B - Nhà thầu (Bidder / Contractor / Tenderer)
 Là công ty (hoặc liên danh nhiều công ty) nộp hồ sơ để cạnh tranh. Họ:
 - Mua/nhận HSMT
 - Chuẩn bị hồ sơ dự thầu (Bid Document)
 - Nộp đúng hạn
 - Chờ kết quả
 
-> **Lưu ý thực tế:** Một nhà thầu có thể vừa là tổng thầu, vừa thuê lại nhà thầu phụ (subcontractor) — nhưng subcontractor thường không được tính kinh nghiệm trong hồ sơ chính.
+> **Lưu ý thực tế:** Một nhà thầu có thể vừa là tổng thầu, vừa thuê lại nhà thầu phụ (subcontractor) - nhưng subcontractor thường không được tính kinh nghiệm trong hồ sơ chính.
 
 ---
 
@@ -105,11 +105,11 @@ Là công ty (hoặc liên danh nhiều công ty) nộp hồ sơ để cạnh tr
 
 3 lý do chính:
 
-**1. Cạnh tranh** — Nhiều bên cùng chào giá → Chủ đầu tư có nhiều lựa chọn hơn, thường được giá tốt hơn.
+**1. Cạnh tranh** - Nhiều bên cùng chào giá → Chủ đầu tư có nhiều lựa chọn hơn, thường được giá tốt hơn.
 
-**2. Minh bạch** — Quy trình công khai, tiêu chí chấm rõ ràng → Khó "thông thầu" nếu thực hiện đúng.
+**2. Minh bạch** - Quy trình công khai, tiêu chí chấm rõ ràng → Khó "thông thầu" nếu thực hiện đúng.
 
-**3. Chọn được đơn vị phù hợp nhất** — Không chỉ rẻ nhất, mà còn đủ năng lực thực hiện.
+**3. Chọn được đơn vị phù hợp nhất** - Không chỉ rẻ nhất, mà còn đủ năng lực thực hiện.
 
 ---
 
@@ -124,7 +124,7 @@ Là công ty (hoặc liên danh nhiều công ty) nộp hồ sơ để cạnh tr
 
 ---
 
-## Quy trình đấu thầu — 6 bước tổng quan
+## Quy trình đấu thầu - 6 bước tổng quan
 Bước 1: Chủ đầu tư phát hành HSMT
 ↓
 Bước 2: Nhà thầu nhận HSMT, nghiên cứu, gửi clarification (nếu có)
@@ -137,11 +137,11 @@ Bước 5: Chủ đầu tư chấm giá, thương thảo hợp đồng
 ↓
 Bước 6: Ký hợp đồng với nhà thầu trúng thầu
 
-> **Lưu ý thực tế:** Gói thầu quốc tế (International Competitive Bidding — ICB) theo chuẩn World Bank, ADB thường có thêm bước Pre-qualification (sơ tuyển năng lực) trước khi phát HSMT chính thức.
+> **Lưu ý thực tế:** Gói thầu quốc tế (International Competitive Bidding - ICB) theo chuẩn World Bank, ADB thường có thêm bước Pre-qualification (sơ tuyển năng lực) trước khi phát HSMT chính thức.
 
 ---
 
-## Đấu thầu công vs đấu thầu tư — khác nhau chỗ nào?
+## Đấu thầu công vs đấu thầu tư - khác nhau chỗ nào?
 
 | | Đấu thầu công (dùng vốn nhà nước) | Đấu thầu tư (doanh nghiệp tư nhân) |
 |---|---|---|
@@ -152,7 +152,7 @@ Bước 6: Ký hợp đồng với nhà thầu trúng thầu
 
 ---
 
-## Cảm giác "ngợp" khi mới vào — hoàn toàn bình thường
+## Cảm giác "ngợp" khi mới vào - hoàn toàn bình thường
 
 HSMT dài 200–500 trang là chuyện bình thường. Thuật ngữ tiếng Anh lẫn tiếng Việt lẫn lộn. Luật dẫn chiếu sang luật khác. Yêu cầu mơ hồ.
 
@@ -160,7 +160,7 @@ Hầu hết người mới đều cảm thấy: *"Mình đọc mà không hiểu
 
 Cảm giác đó không có nghĩa là bạn không phù hợp. Có nghĩa là bạn chưa có hệ thống.
 
-BidMentor giúp bạn xây hệ thống đó: từ cách đọc HSMT, hiểu thuật ngữ, nhận ra điều quan trọng — đến tránh những lỗi khiến hồ sơ bị loại ngay từ vòng đầu.$content_1$,
+BidMentor giúp bạn xây hệ thống đó: từ cách đọc HSMT, hiểu thuật ngữ, nhận ra điều quan trọng - đến tránh những lỗi khiến hồ sơ bị loại ngay từ vòng đầu.$content_1$,
   $mistakes_1$[
   {
     "title": "Nhầm giữa HSMT và hồ sơ dự thầu",
@@ -220,16 +220,16 @@ BidMentor giúp bạn xây hệ thống đó: từ cách đọc HSMT, hiểu thu
 ),
 (
   'cau-truc-hsmt-doc-tu-dau',
-  $title_2$Cấu trúc HSMT — đọc từ đâu, theo thứ tự nào$title_2$,
+  $title_2$Cấu trúc HSMT - đọc từ đâu, theo thứ tự nào$title_2$,
   $titleen_2$Understanding Bidding Document Structure$titleen_2$,
   0,
   'quy-trinh',
   ARRAY['HSMT', 'BDS', 'qualification', 'deadline', 'bảo lãnh dự thầu']::text[],
-  $objective_2$Sau bài này bạn biết cấu trúc điển hình của một HSMT, biết đọc phần nào trước, phần nào có thể lướt — và không bắt đầu làm hồ sơ trước khi nắm đủ thông tin quan trọng.$objective_2$,
-  $explanation_2$HSMT (Hồ sơ mời thầu) thường dài từ 100 đến 500 trang, được chia thành nhiều phần/volume. Đừng đọc từ trang 1 theo thứ tự — bạn sẽ mất hàng giờ vào những chỗ không quan trọng trước. Thay vào đó, có 3 thứ bạn phải tìm và đọc kỹ trong 30 phút đầu tiên: điều kiện tham gia, deadline, và bảo lãnh dự thầu. Nếu một trong ba cái đó bạn không đáp ứng hoặc bỏ sót, phần còn lại của HSMT không còn ý nghĩa nữa.$explanation_2$,
+  $objective_2$Sau bài này bạn biết cấu trúc điển hình của một HSMT, biết đọc phần nào trước, phần nào có thể lướt - và không bắt đầu làm hồ sơ trước khi nắm đủ thông tin quan trọng.$objective_2$,
+  $explanation_2$HSMT (Hồ sơ mời thầu) thường dài từ 100 đến 500 trang, được chia thành nhiều phần/volume. Đừng đọc từ trang 1 theo thứ tự - bạn sẽ mất hàng giờ vào những chỗ không quan trọng trước. Thay vào đó, có 3 thứ bạn phải tìm và đọc kỹ trong 30 phút đầu tiên: điều kiện tham gia, deadline, và bảo lãnh dự thầu. Nếu một trong ba cái đó bạn không đáp ứng hoặc bỏ sót, phần còn lại của HSMT không còn ý nghĩa nữa.$explanation_2$,
   $content_2$## HSMT là gì và thường dài bao nhiêu?
 
-HSMT (Hồ sơ mời thầu) — tiếng Anh là Bidding Document hoặc Tender Document — là toàn bộ tài liệu Chủ đầu tư phát ra để:
+HSMT (Hồ sơ mời thầu) - tiếng Anh là Bidding Document hoặc Tender Document - là toàn bộ tài liệu Chủ đầu tư phát ra để:
 - Mô tả yêu cầu của gói thầu
 - Đặt ra điều kiện tham gia
 - Hướng dẫn cách chuẩn bị và nộp hồ sơ
@@ -248,7 +248,7 @@ HSMT (Hồ sơ mời thầu) — tiếng Anh là Bidding Document hoặc Tender 
 
 Tùy gói thầu, HSMT có thể được tổ chức theo 2 kiểu phổ biến:
 
-### Kiểu 1 — Theo Section (phổ biến với gói thầu trong nước)
+### Kiểu 1 - Theo Section (phổ biến với gói thầu trong nước)
 Section 1:  Invitation to Bid / Thư mời thầu
 Section 2:  Instructions to Bidders (ITB) / Chỉ dẫn nhà thầu
 Section 3:  Bid Data Sheet (BDS) / Bảng dữ liệu đấu thầu
@@ -259,7 +259,7 @@ Section 7:  General Conditions of Contract (GCC)
 Section 8:  Special Conditions of Contract (SCC)
 Section 9:  Contract Forms / Mẫu hợp đồng
 
-### Kiểu 2 — Theo Volume (phổ biến với gói thầu quốc tế, World Bank, ADB)
+### Kiểu 2 - Theo Volume (phổ biến với gói thầu quốc tế, World Bank, ADB)
 Volume 1:   Bidding Procedures (Quy trình đấu thầu)
 Volume 2:   Employer's Requirements / Technical Specifications
 Volume 3:   Conditions of Contract & Contract Forms
@@ -272,7 +272,7 @@ Volume 3:   Conditions of Contract & Contract Forms
 
 Khi nhận HSMT, trước khi làm bất cứ điều gì khác, hãy tìm và đọc kỹ 3 mục này:
 
-### Thứ 1 — Điều kiện tham gia (Eligibility / Qualification Requirements)
+### Thứ 1 - Điều kiện tham gia (Eligibility / Qualification Requirements)
 
 Thường nằm ở: Section 2 (ITB), Section 4, hoặc Annex to ITB.
 
@@ -283,24 +283,24 @@ Cần check:
 - Nhân sự chủ chốt (key personnel)
 - Thiết bị (nếu là gói xây lắp)
 
-**Tại sao đọc trước?** Nếu công ty bạn không đáp ứng điều kiện tham gia, không cần đọc thêm gì nữa — hoặc phải xem xét liên danh (JV).
+**Tại sao đọc trước?** Nếu công ty bạn không đáp ứng điều kiện tham gia, không cần đọc thêm gì nữa - hoặc phải xem xét liên danh (JV).
 
 ---
 
-### Thứ 2 — Deadline & thời hạn hiệu lực (Deadline + Bid Validity)
+### Thứ 2 - Deadline & thời hạn hiệu lực (Deadline + Bid Validity)
 
-Thường nằm ở: BDS (Bid Data Sheet) — là bảng tóm tắt các thông số quan trọng của gói thầu.
+Thường nằm ở: BDS (Bid Data Sheet) - là bảng tóm tắt các thông số quan trọng của gói thầu.
 
 Cần xác định ngay:
 - Ngày giờ nộp thầu (Submission Deadline)
-- Thời hạn hiệu lực hồ sơ (Bid Validity Period) — thường 90–120 ngày
+- Thời hạn hiệu lực hồ sơ (Bid Validity Period) - thường 90–120 ngày
 - Deadline gửi câu hỏi làm rõ (Clarification Deadline)
 
 **Tại sao đọc trước?** Để biết bạn có đủ thời gian chuẩn bị không. Một gói thầu deadline 14 ngày nữa với yêu cầu phức tạp là tín hiệu cần cân nhắc kỹ.
 
 ---
 
-### Thứ 3 — Bảo lãnh dự thầu (Bid Security / Bid Bond)
+### Thứ 3 - Bảo lãnh dự thầu (Bid Security / Bid Bond)
 
 Thường nằm ở: BDS + Section 2 (ITB) + Bid Security Form.
 
@@ -324,7 +324,7 @@ Cần xác định:
 | Evaluation Criteria | ĐỌC KỸ | Hiểu mình bị chấm theo tiêu chí gì |
 | Bidding Forms | ĐỌC VÀ DÙNG | Phải điền theo đúng mẫu |
 | GCC (General Conditions) | CÓ THỂ LƯỚT | Điều khoản chuẩn, ít thay đổi |
-| SCC (Special Conditions) | ĐỌC KỸ | Đây là chỗ Chủ đầu tư sửa điều khoản — nhiều bẫy nằm ở đây |
+| SCC (Special Conditions) | ĐỌC KỸ | Đây là chỗ Chủ đầu tư sửa điều khoản - nhiều bẫy nằm ở đây |
 | Technical Specifications chi tiết | ĐỌC KỸ KHI LÀM HỒ SƠ | Không cần đọc toàn bộ ngay từ đầu |
 
 > **Lưu ý thực tế:** SCC (Special Conditions of Contract) là phần nhiều người bỏ qua vì nghĩ "điều khoản hợp đồng đọc sau cũng được". Sai. SCC có thể chứa các điều khoản bất lợi nghiêm trọng như phạt vượt deadline rất nặng, hoặc điều kiện nghiệm thu khắt khe.
@@ -335,9 +335,9 @@ Cần xác định:
 
 Một workflow đơn giản hiệu quả:
 
-**Bước 1:** Đọc BDS trước — highlight tất cả số liệu quan trọng (deadline, giá trị, validity period).
+**Bước 1:** Đọc BDS trước - highlight tất cả số liệu quan trọng (deadline, giá trị, validity period).
 
-**Bước 2:** Đọc Qualification Criteria — dùng 3 màu:
+**Bước 2:** Đọc Qualification Criteria - dùng 3 màu:
 - 🟢 Xanh: đã có, đủ
 - 🟡 Vàng: có nhưng cần xác nhận/bổ sung
 - 🔴 Đỏ: chưa có hoặc không đáp ứng
@@ -367,7 +367,7 @@ HSMT yêu cầu "similar contract value at least USD 2 million trong 5 năm gầ
   },
   {
     "title": "Bỏ qua SCC (Special Conditions of Contract)",
-    "description": "Nhiều nhà thầu nghĩ GCC là điều khoản chuẩn thì SCC cũng vậy. Thực ra SCC là nơi Chủ đầu tư sửa đổi, bổ sung — có thể chứa điều khoản phạt nặng hoặc điều kiện bất lợi.",
+    "description": "Nhiều nhà thầu nghĩ GCC là điều khoản chuẩn thì SCC cũng vậy. Thực ra SCC là nơi Chủ đầu tư sửa đổi, bổ sung - có thể chứa điều khoản phạt nặng hoặc điều kiện bất lợi.",
     "severity": "high"
   },
   {
@@ -399,11 +399,11 @@ HSMT yêu cầu "similar contract value at least USD 2 million trong 5 năm gầ
     "question": "SCC (Special Conditions of Contract) quan trọng vì lý do gì?",
     "options": [
       "Đây là phần dài nhất trong HSMT",
-      "Đây là nơi Chủ đầu tư sửa đổi điều khoản chuẩn — có thể chứa điều khoản bất lợi",
+      "Đây là nơi Chủ đầu tư sửa đổi điều khoản chuẩn - có thể chứa điều khoản bất lợi",
       "SCC quy định tiêu chí chấm điểm kỹ thuật",
       "SCC chỉ quan trọng sau khi trúng thầu"
     ],
-    "correct_answer": "Đây là nơi Chủ đầu tư sửa đổi điều khoản chuẩn — có thể chứa điều khoản bất lợi",
+    "correct_answer": "Đây là nơi Chủ đầu tư sửa đổi điều khoản chuẩn - có thể chứa điều khoản bất lợi",
     "explanation": "GCC là template chuẩn, SCC là phần Chủ đầu tư customize. Nhiều bẫy về phạt vi phạm, điều kiện nghiệm thu nằm ở SCC."
   },
   {
@@ -424,23 +424,23 @@ HSMT yêu cầu "similar contract value at least USD 2 million trong 5 năm gầ
 (
   'top-loi-bi-loai-chi-tu',
   $title_3$Top lỗi bị loại chí tử trong đấu thầu$title_3$,
-  $titleen_3$Fatal Errors in Bidding — The Complete List$titleen_3$,
+  $titleen_3$Fatal Errors in Bidding - The Complete List$titleen_3$,
   1,
   'fatal-errors',
   ARRAY['lỗi chí tử', 'fatal errors', 'bảo lãnh dự thầu', 'deadline', 'compliance']::text[],
-  $objective_3$Sau bài này bạn biết những lỗi nào khiến hồ sơ bị loại ngay lập tức — không thể cứu vãn — và có checklist 10 mục để kiểm tra trước khi nộp.$objective_3$,
-  $explanation_3$Trong đấu thầu, có hai loại lỗi: lỗi có thể được yêu cầu làm rõ hoặc bổ sung, và lỗi chí tử — tức là lỗi mà Chủ đầu tư bắt buộc phải loại hồ sơ ngay, không cần xem xét thêm. Lỗi chí tử thường liên quan đến bảo lãnh, tư cách pháp lý, deadline, hoặc không tuân thủ yêu cầu bắt buộc. Biết trước những lỗi này là bước đầu tiên để không bao giờ mắc phải.$explanation_3$,
+  $objective_3$Sau bài này bạn biết những lỗi nào khiến hồ sơ bị loại ngay lập tức - không thể cứu vãn - và có checklist 10 mục để kiểm tra trước khi nộp.$objective_3$,
+  $explanation_3$Trong đấu thầu, có hai loại lỗi: lỗi có thể được yêu cầu làm rõ hoặc bổ sung, và lỗi chí tử - tức là lỗi mà Chủ đầu tư bắt buộc phải loại hồ sơ ngay, không cần xem xét thêm. Lỗi chí tử thường liên quan đến bảo lãnh, tư cách pháp lý, deadline, hoặc không tuân thủ yêu cầu bắt buộc. Biết trước những lỗi này là bước đầu tiên để không bao giờ mắc phải.$explanation_3$,
   $content_3$## "Lỗi chí tử" là gì?
 
 Lỗi chí tử (fatal error / ground for rejection) là những sai sót khiến hồ sơ bị loại **ngay lập tức**, không phụ thuộc vào hồ sơ có tốt đến đâu ở các phần khác.
 
-Tại sao không thể cứu? Vì Luật Đấu thầu và HSMT quy định rõ: với những lỗi này, Chủ đầu tư **bắt buộc** phải loại — không có quyền xem xét ngoại lệ. Ngay cả khi hội đồng chấm thầu muốn bỏ qua, họ cũng không thể làm vậy mà không vi phạm quy định.
+Tại sao không thể cứu? Vì Luật Đấu thầu và HSMT quy định rõ: với những lỗi này, Chủ đầu tư **bắt buộc** phải loại - không có quyền xem xét ngoại lệ. Ngay cả khi hội đồng chấm thầu muốn bỏ qua, họ cũng không thể làm vậy mà không vi phạm quy định.
 
 > **Lưu ý thực tế:** Một số lỗi là fatal theo Luật Đấu thầu 2023. Một số khác là fatal vì HSMT quy định rõ "non-compliant" hoặc "shall be rejected". Cần đọc cả hai nguồn.
 
 ---
 
-## Nhóm 1 — Lỗi hồ sơ pháp lý
+## Nhóm 1 - Lỗi hồ sơ pháp lý
 
 ### Lỗi 1: Bảo lãnh dự thầu sai hoặc thiếu
 
@@ -477,7 +477,7 @@ HSMT yêu cầu bid security có hiệu lực đến ngày 30/9/2024 (bid validi
 
 ---
 
-## Nhóm 2 — Lỗi nộp hồ sơ
+## Nhóm 2 - Lỗi nộp hồ sơ
 
 ### Lỗi 4: Nộp trễ deadline
 
@@ -497,7 +497,7 @@ Các tình huống thường gặp:
 
 HSMT thường yêu cầu nộp đủ: Technical Proposal + Financial Proposal (hoặc Vol 1 + Vol 2).
 
-Nếu thiếu một phần, hồ sơ bị loại toàn bộ — kể cả phần còn lại hoàn hảo.
+Nếu thiếu một phần, hồ sơ bị loại toàn bộ - kể cả phần còn lại hoàn hảo.
 
 ---
 
@@ -509,11 +509,11 @@ Nếu thiếu một phần, hồ sơ bị loại toàn bộ — kể cả phần
 
 ---
 
-## Nhóm 3 — Lỗi năng lực
+## Nhóm 3 - Lỗi năng lực
 
 ### Lỗi 7: Không đáp ứng ngưỡng kinh nghiệm tương tự tối thiểu
 
-Qualification Criteria thường có ngưỡng tối thiểu (minimum threshold). Nếu không đạt ngưỡng này, hồ sơ bị loại — không cần xem điểm kỹ thuật.
+Qualification Criteria thường có ngưỡng tối thiểu (minimum threshold). Nếu không đạt ngưỡng này, hồ sơ bị loại - không cần xem điểm kỹ thuật.
 
 Ví dụ: "Minimum 2 similar contracts, each with contract value not less than USD 1 million, completed within the last 5 years."
 
@@ -535,11 +535,11 @@ Nếu không đáp ứng → bị loại thẳng ở vòng chấm năng lực.
 
 ---
 
-## Nhóm 4 — Lỗi kỹ thuật
+## Nhóm 4 - Lỗi kỹ thuật
 
 ### Lỗi 9: Không tuân thủ yêu cầu kỹ thuật bắt buộc (Material Deviation)
 
-Một số yêu cầu kỹ thuật được đánh dấu là "mandatory" hoặc "shall" — không phải "should" hay "may". Không đáp ứng những yêu cầu này tạo ra "material deviation" và dẫn đến bị loại.
+Một số yêu cầu kỹ thuật được đánh dấu là "mandatory" hoặc "shall" - không phải "should" hay "may". Không đáp ứng những yêu cầu này tạo ra "material deviation" và dẫn đến bị loại.
 
 Ví dụ: HSMT yêu cầu thiết bị phải đạt chuẩn ISO 9001, nhà thầu đề xuất thiết bị chưa có chứng chỉ này.
 
@@ -567,12 +567,12 @@ Dán lên bàn làm việc. Check từng mục trước khi nộp:
   $mistakes_3$[
   {
     "title": "Nhầm ngày hiệu lực bảo lãnh với ngày hiệu lực hồ sơ",
-    "description": "Thời hạn hiệu lực bảo lãnh phải DÀI HƠN bid validity period — thường thêm 30 ngày. Nhiều người xin bảo lãnh bằng đúng bid validity là đã sai.",
+    "description": "Thời hạn hiệu lực bảo lãnh phải DÀI HƠN bid validity period - thường thêm 30 ngày. Nhiều người xin bảo lãnh bằng đúng bid validity là đã sai.",
     "severity": "fatal"
   },
   {
     "title": "Upload hồ sơ online vào phút chót",
-    "description": "Hệ thống e-procurement chậm, file nặng, đường truyền lỗi — tất cả đều có thể khiến bạn trễ deadline dù đã ngồi trước màn hình. Upload xong toàn bộ trước ít nhất 2-3 tiếng.",
+    "description": "Hệ thống e-procurement chậm, file nặng, đường truyền lỗi - tất cả đều có thể khiến bạn trễ deadline dù đã ngồi trước màn hình. Upload xong toàn bộ trước ít nhất 2-3 tiếng.",
     "severity": "fatal"
   },
   {
@@ -589,19 +589,19 @@ Dán lên bàn làm việc. Check từng mục trước khi nộp:
   $fatal_3$[
   {
     "description": "Bảo lãnh dự thầu thiếu hoặc không hợp lệ (sai số tiền, sai thời hạn, sai hình thức, sai mẫu)",
-    "law_reference": "Điều 14, Luật Đấu thầu 2023 — cần verify"
+    "law_reference": "Điều 14, Luật Đấu thầu 2023 - cần verify"
   },
   {
     "description": "Nộp hồ sơ sau thời điểm đóng thầu (submission deadline)",
-    "law_reference": "Điều 15, Luật Đấu thầu 2023 — cần verify"
+    "law_reference": "Điều 15, Luật Đấu thầu 2023 - cần verify"
   },
   {
     "description": "Nhà thầu không đáp ứng điều kiện tư cách hợp lệ (đang bị cấm thầu, giải thể, phá sản)",
-    "law_reference": "Điều 5, Luật Đấu thầu 2023 — cần verify"
+    "law_reference": "Điều 5, Luật Đấu thầu 2023 - cần verify"
   },
   {
     "description": "Không đáp ứng ngưỡng tối thiểu về kinh nghiệm tương tự theo quy định HSMT",
-    "law_reference": "Quy định tại HSMT — không có điều luật cụ thể"
+    "law_reference": "Quy định tại HSMT - không có điều luật cụ thể"
   },
   {
     "description": "Thiếu chữ ký hoặc chữ ký không hợp lệ trên Đơn dự thầu",
@@ -613,7 +613,7 @@ Dán lên bàn làm việc. Check từng mục trước khi nộp:
   },
   {
     "description": "Nhà thầu có conflict of interest với đơn vị tư vấn lập HSMT",
-    "law_reference": "Điều 16, Luật Đấu thầu 2023 — cần verify"
+    "law_reference": "Điều 16, Luật Đấu thầu 2023 - cần verify"
   },
   {
     "description": "Không đủ năng lực tài chính tối thiểu (annual turnover / working capital)",
@@ -638,10 +638,10 @@ Dán lên bàn làm việc. Check từng mục trước khi nộp:
     "options": [
       "Bằng đúng bid validity period",
       "Ngắn hơn bid validity để tiết kiệm phí ngân hàng",
-      "Dài hơn bid validity period — thường thêm 28-30 ngày",
+      "Dài hơn bid validity period - thường thêm 28-30 ngày",
       "Không quan trọng miễn là còn hiệu lực khi nộp thầu"
     ],
-    "correct_answer": "Dài hơn bid validity period — thường thêm 28-30 ngày",
+    "correct_answer": "Dài hơn bid validity period - thường thêm 28-30 ngày",
     "explanation": "Bảo lãnh phải cover hết bid validity và thêm buffer để Chủ đầu tư có thời gian yêu cầu gia hạn nếu cần."
   },
   {
@@ -649,10 +649,10 @@ Dán lên bàn làm việc. Check từng mục trước khi nộp:
     "options": [
       "Được tính đầy đủ như hợp đồng tổng thầu",
       "Được tính 50% giá trị",
-      "Thường KHÔNG được tính — phần lớn HSMT chỉ chấp nhận prime contractor",
+      "Thường KHÔNG được tính - phần lớn HSMT chỉ chấp nhận prime contractor",
       "Tùy Chủ đầu tư quyết định"
     ],
-    "correct_answer": "Thường KHÔNG được tính — phần lớn HSMT chỉ chấp nhận prime contractor",
+    "correct_answer": "Thường KHÔNG được tính - phần lớn HSMT chỉ chấp nhận prime contractor",
     "explanation": "Đây là một trong những bẫy phổ biến nhất. Cần đọc kỹ định nghĩa \"similar experience\" trong từng HSMT cụ thể."
   }
 ]$quiz_3$::jsonb,
@@ -661,13 +661,13 @@ Dán lên bàn làm việc. Check từng mục trước khi nộp:
 ),
 (
   'bao-lanh-du-thau-khong-duoc-sai',
-  $title_4$Bảo lãnh dự thầu — không được sai$title_4$,
-  $titleen_4$Bid Security / Bid Bond — Zero Tolerance$titleen_4$,
+  $title_4$Bảo lãnh dự thầu - không được sai$title_4$,
+  $titleen_4$Bid Security / Bid Bond - Zero Tolerance$titleen_4$,
   1,
   'bao-lanh',
   ARRAY['bảo lãnh dự thầu', 'bid security', 'bid bond', 'ngân hàng', 'fatal errors']::text[],
   $objective_4$Sau bài này bạn biết bảo lãnh dự thầu là gì, 2 hình thức khác nhau ra sao, và cách đọc yêu cầu bảo lãnh trong HSMT để không bao giờ mắc lỗi chí tử này.$objective_4$,
-  $explanation_4$Bảo lãnh dự thầu (Bid Security / Bid Bond) là một khoản tiền đảm bảo bạn cam kết nghiêm túc khi tham gia thầu. Nếu bạn thắng mà không ký hợp đồng, hoặc rút hồ sơ sau deadline, khoản này sẽ bị tịch thu. Đây là yêu cầu "zero tolerance" trong đấu thầu — sai một chi tiết nhỏ là bị loại ngay, không có cơ hội sửa.$explanation_4$,
+  $explanation_4$Bảo lãnh dự thầu (Bid Security / Bid Bond) là một khoản tiền đảm bảo bạn cam kết nghiêm túc khi tham gia thầu. Nếu bạn thắng mà không ký hợp đồng, hoặc rút hồ sơ sau deadline, khoản này sẽ bị tịch thu. Đây là yêu cầu "zero tolerance" trong đấu thầu - sai một chi tiết nhỏ là bị loại ngay, không có cơ hội sửa.$explanation_4$,
   $content_4$## Bảo lãnh dự thầu là gì? (ELI5)
 
 Hãy nghĩ như thế này: bạn đang đặt cọc để nói với Chủ đầu tư rằng "Tôi tham gia thật sự, không phải cho vui."
@@ -683,7 +683,7 @@ Khoản này thường chiếm **1–3% giá gói thầu**. Với gói thầu l�
 
 ## 2 hình thức bảo lãnh dự thầu
 
-### Hình thức 1 — Tiền mặt (Cash Deposit)
+### Hình thức 1 - Tiền mặt (Cash Deposit)
 
 Nhà thầu chuyển tiền vào tài khoản được chỉ định trong HSMT.
 
@@ -699,7 +699,7 @@ Nhà thầu chuyển tiền vào tài khoản được chỉ định trong HSMT.
 
 ---
 
-### Hình thức 2 — Bảo lãnh ngân hàng (Bank Guarantee / Letter of Guarantee)
+### Hình thức 2 - Bảo lãnh ngân hàng (Bank Guarantee / Letter of Guarantee)
 
 Ngân hàng cam kết thay mặt nhà thầu: nếu nhà thầu vi phạm, ngân hàng sẽ trả tiền theo yêu cầu của Chủ đầu tư.
 
@@ -714,7 +714,7 @@ Ngân hàng cam kết thay mặt nhà thầu: nếu nhà thầu vi phạm, ngân
 
 **Khi nào dùng:** Gói thầu quốc tế, gói thầu lớn, hoặc khi HSMT yêu cầu.
 
-> **Lưu ý thực tế:** Đa số HSMT quốc tế theo chuẩn World Bank, ADB chỉ chấp nhận Bank Guarantee — không nhận tiền mặt. Đọc kỹ trước khi quyết định hình thức nào.
+> **Lưu ý thực tế:** Đa số HSMT quốc tế theo chuẩn World Bank, ADB chỉ chấp nhận Bank Guarantee - không nhận tiền mặt. Đọc kỹ trước khi quyết định hình thức nào.
 
 ---
 
@@ -722,17 +722,17 @@ Ngân hàng cam kết thay mặt nhà thầu: nếu nhà thầu vi phạm, ngân
 
 Mỗi lần đọc HSMT, hãy tìm phần Bid Security và check đủ 5 điểm này:
 
-### Check 1 — Số tiền (Amount)
+### Check 1 - Số tiền (Amount)
 
 HSMT thường ghi theo 2 cách:
-- Cách 1: Số tiền cố định — ví dụ: "Bid Security: USD 50,000"
-- Cách 2: Tỷ lệ phần trăm — ví dụ: "2% of bid price" (khi đó bạn tính dựa trên giá bạn dự định chào)
+- Cách 1: Số tiền cố định - ví dụ: "Bid Security: USD 50,000"
+- Cách 2: Tỷ lệ phần trăm - ví dụ: "2% of bid price" (khi đó bạn tính dựa trên giá bạn dự định chào)
 
 **Lưu ý:** Số tiền phải bằng ĐÚNG hoặc cao hơn yêu cầu. Thấp hơn dù chỉ 1 USD cũng bị loại.
 
 ---
 
-### Check 2 — Thời hạn hiệu lực (Validity Period)
+### Check 2 - Thời hạn hiệu lực (Validity Period)
 
 Công thức chuẩn:
 Hiệu lực bảo lãnh = Bid Validity Period + 28 ngày (hoặc 30 ngày, tùy HSMT)
@@ -742,11 +742,11 @@ Ví dụ:
 - Bid Validity: 90 ngày → hết hạn 29/09/2024
 - Hiệu lực bảo lãnh tối thiểu: 29/10/2024 (thêm 30 ngày)
 
-> **Lưu ý thực tế:** Một số HSMT ghi rõ ngày hết hạn cụ thể thay vì công thức. Trong trường hợp đó, dùng ngày đó luôn — không cần tự tính.
+> **Lưu ý thực tế:** Một số HSMT ghi rõ ngày hết hạn cụ thể thay vì công thức. Trong trường hợp đó, dùng ngày đó luôn - không cần tự tính.
 
 ---
 
-### Check 3 — Hình thức (Form)
+### Check 3 - Hình thức (Form)
 
 HSMT thường ghi rõ:
 - Chấp nhận cash deposit, bank guarantee, hay cả hai?
@@ -758,7 +758,7 @@ HSMT thường ghi rõ:
 
 ---
 
-### Check 4 — Mẫu bảo lãnh (Form Template)
+### Check 4 - Mẫu bảo lãnh (Form Template)
 
 Nhiều HSMT kèm theo mẫu Bid Security Form. Nếu có mẫu → **bắt buộc phải dùng đúng mẫu đó**.
 
@@ -769,14 +769,14 @@ HSMT cung cấp Bid Security Form ở Annex A với ngôn ngữ cụ thể: "Thi
 
 ---
 
-### Check 5 — Ngân hàng được chấp nhận (Eligible Bank)
+### Check 5 - Ngân hàng được chấp nhận (Eligible Bank)
 
 HSMT có thể giới hạn:
 - Chỉ ngân hàng có trụ sở/chi nhánh trong nước
 - Chỉ ngân hàng trong danh sách được phê duyệt
 - Ngân hàng có rating tối thiểu (với gói thầu quốc tế)
 
-**Lưu ý:** Với gói thầu ADB/World Bank, thường yêu cầu "reputable bank" — ngân hàng quốc tế uy tín. Một số ngân hàng nhỏ của Việt Nam có thể không được chấp nhận.
+**Lưu ý:** Với gói thầu ADB/World Bank, thường yêu cầu "reputable bank" - ngân hàng quốc tế uy tín. Một số ngân hàng nhỏ của Việt Nam có thể không được chấp nhận.
 
 ---
 
@@ -810,15 +810,15 @@ Issuing bank must be: a reputable bank located in the
 Employer's country or abroad.
 
 **Phân tích từng dòng:**
-- Số tiền: USD 30,000 — fixed amount, không phải %
+- Số tiền: USD 30,000 - fixed amount, không phải %
 - Thời hạn: bid validity + 28 ngày
-- Hình thức: Bank Guarantee ONLY — không nhận tiền mặt
-- Mẫu: Annex A — phải dùng đúng mẫu
-- Ngân hàng: reputable bank — cần confirm ngân hàng của mình có được chấp nhận không$content_4$,
+- Hình thức: Bank Guarantee ONLY - không nhận tiền mặt
+- Mẫu: Annex A - phải dùng đúng mẫu
+- Ngân hàng: reputable bank - cần confirm ngân hàng của mình có được chấp nhận không$content_4$,
   $mistakes_4$[
   {
     "title": "Xin bảo lãnh hiệu lực bằng đúng bid validity",
-    "description": "Phải cộng thêm 28-30 ngày buffer. Rất nhiều nhà thầu tính bid validity = 90 ngày rồi xin bảo lãnh 90 ngày — sai. Phải là 90 + 28 = 118 ngày trở lên.",
+    "description": "Phải cộng thêm 28-30 ngày buffer. Rất nhiều nhà thầu tính bid validity = 90 ngày rồi xin bảo lãnh 90 ngày - sai. Phải là 90 + 28 = 118 ngày trở lên.",
     "severity": "fatal"
   },
   {
@@ -833,14 +833,14 @@ Employer's country or abroad.
   },
   {
     "title": "Dùng mẫu của ngân hàng thay vì mẫu đính kèm HSMT",
-    "description": "Khi HSMT đã cung cấp Bid Security Form template, bắt buộc phải dùng đúng mẫu đó. Ngân hàng thường có mẫu riêng — hãy yêu cầu họ điều chỉnh theo mẫu HSMT.",
+    "description": "Khi HSMT đã cung cấp Bid Security Form template, bắt buộc phải dùng đúng mẫu đó. Ngân hàng thường có mẫu riêng - hãy yêu cầu họ điều chỉnh theo mẫu HSMT.",
     "severity": "fatal"
   }
 ]$mistakes_4$::jsonb,
   $fatal_4$[
   {
-    "description": "Thiếu bảo lãnh dự thầu — không nộp kèm hồ sơ",
-    "law_reference": "Điều 14, Luật Đấu thầu 2023 — cần verify"
+    "description": "Thiếu bảo lãnh dự thầu - không nộp kèm hồ sơ",
+    "law_reference": "Điều 14, Luật Đấu thầu 2023 - cần verify"
   },
   {
     "description": "Số tiền bảo lãnh thấp hơn yêu cầu HSMT",
@@ -900,8 +900,8 @@ Employer's country or abroad.
 ),
 (
   'kinh-nghiem-tuong-tu-yeu-cau-kho-nhat',
-  $title_5$Kinh nghiệm tương tự — yêu cầu khó nhất$title_5$,
-  $titleen_5$Similar Experience — The Hardest Requirement$titleen_5$,
+  $title_5$Kinh nghiệm tương tự - yêu cầu khó nhất$title_5$,
+  $titleen_5$Similar Experience - The Hardest Requirement$titleen_5$,
   1,
   'kinh-nghiem',
   ARRAY['kinh nghiệm tương tự', 'similar experience', 'completion certificate', 'subcontract', 'JV']::text[],
@@ -911,7 +911,7 @@ Employer's country or abroad.
 
 Khi HSMT yêu cầu "similar experience", họ muốn biết 2 điều:
 
-### Chiều 1 — Similar Nature (Tương đồng về bản chất công việc)
+### Chiều 1 - Similar Nature (Tương đồng về bản chất công việc)
 Loại công việc bạn đã làm có giống loại công việc trong gói thầu này không?
 
 Ví dụ:
@@ -919,7 +919,7 @@ Ví dụ:
 - Gói thầu: Cung cấp phần mềm ERP → cần kinh nghiệm triển khai ERP, không phải làm website
 - Gói thầu: Vận hành và bảo trì hệ thống điện → cần O&M electrical, không phải thi công mới
 
-### Chiều 2 — Similar Scale (Tương đồng về quy mô/giá trị)
+### Chiều 2 - Similar Scale (Tương đồng về quy mô/giá trị)
 Hợp đồng của bạn đã làm có giá trị/quy mô đủ lớn không?
 
 HSMT thường quy định ngưỡng tối thiểu:
@@ -931,7 +931,7 @@ HSMT thường quy định ngưỡng tối thiểu:
 ---
 
 ## Ví dụ đoạn yêu cầu trong HSMT thật (minh họa)
-Section 4 — Qualification Criteria
+Section 4 - Qualification Criteria
 4.2 Experience
 The Bidder shall have experience as prime contractor
 (or member of JV) in the implementation of at least
@@ -979,7 +979,7 @@ Các tên gọi khác nhau:
 - Biên bản nghiệm thu hoàn thành
 
 **Ví dụ thật (minh họa):**
-Nhà thầu có hợp đồng trị giá USD 3 triệu, đang thực hiện dở dang (80% khối lượng xong). HSMT yêu cầu hợp đồng "successfully completed" — hợp đồng này không được tính.
+Nhà thầu có hợp đồng trị giá USD 3 triệu, đang thực hiện dở dang (80% khối lượng xong). HSMT yêu cầu hợp đồng "successfully completed" - hợp đồng này không được tính.
 
 ---
 
@@ -1000,7 +1000,7 @@ Một số HSMT còn yêu cầu:
 
 ## 4 bẫy phổ biến nhất
 
-### Bẫy 1 — Hợp đồng subcontract không được tính
+### Bẫy 1 - Hợp đồng subcontract không được tính
 
 Đây là bẫy phổ biến nhất và gây thiệt hại nhiều nhất.
 
@@ -1012,7 +1012,7 @@ Một số HSMT còn yêu cầu:
 
 ---
 
-### Bẫy 2 — Hợp đồng chưa có nghiệm thu
+### Bẫy 2 - Hợp đồng chưa có nghiệm thu
 
 **Vấn đề:** Hợp đồng đã hoàn thành thực tế, khách hàng hài lòng, nhưng chưa có tài liệu nghiệm thu chính thức.
 
@@ -1022,19 +1022,19 @@ Một số HSMT còn yêu cầu:
 
 ---
 
-### Bẫy 3 — Hợp đồng quá cũ (ngoài time window)
+### Bẫy 3 - Hợp đồng quá cũ (ngoài time window)
 
 **Vấn đề:** HSMT yêu cầu "completed within the last 5 years". Ngày hoàn thành hợp đồng được tính từ ngày trong completion certificate, không phải ngày ký hợp đồng.
 
 **Cách tính:** Nếu submission deadline là 01/07/2024, time window là từ 01/07/2019.
 
-**Bẫy:** Hợp đồng hoàn thành tháng 6/2019 — ngoài window 1 tháng, không được tính.
+**Bẫy:** Hợp đồng hoàn thành tháng 6/2019 - ngoài window 1 tháng, không được tính.
 
 ---
 
-### Bẫy 4 — Similar nature không đúng
+### Bẫy 4 - Similar nature không đúng
 
-**Vấn đề:** Nhà thầu tự diễn giải rộng hơn yêu cầu. Ví dụ: HSMT yêu cầu kinh nghiệm "supply and installation of HVAC systems", nhà thầu khai kinh nghiệm "general building construction" — không đủ specific.
+**Vấn đề:** Nhà thầu tự diễn giải rộng hơn yêu cầu. Ví dụ: HSMT yêu cầu kinh nghiệm "supply and installation of HVAC systems", nhà thầu khai kinh nghiệm "general building construction" - không đủ specific.
 
 **Cách xử lý:** Đọc kỹ định nghĩa "similar" trong HSMT. Nếu không rõ, gửi câu hỏi clarification để Chủ đầu tư xác nhận loại kinh nghiệm nào được chấp nhận.
 
@@ -1060,7 +1060,7 @@ Trong JV, kinh nghiệm của **các thành viên** được cộng lại. Một
   },
   {
     "title": "Không chuẩn bị completion certificate trước",
-    "description": "Xin completion certificate từ khách hàng cũ mất thời gian — đặc biệt với khách hàng lớn. Nên chủ động xin sau khi hoàn thành mỗi dự án, không đợi đến khi cần làm hồ sơ.",
+    "description": "Xin completion certificate từ khách hàng cũ mất thời gian - đặc biệt với khách hàng lớn. Nên chủ động xin sau khi hoàn thành mỗi dự án, không đợi đến khi cần làm hồ sơ.",
     "severity": "high"
   },
   {
@@ -1093,23 +1093,23 @@ Trong JV, kinh nghiệm của **các thành viên** được cộng lại. Một
   {
     "question": "HSMT yêu cầu \"2 contracts completed within 5 years\". Hợp đồng A ký năm 2017, nghiệm thu tháng 8/2019. Bid deadline là tháng 8/2024. Hợp đồng A có được tính không?",
     "options": [
-      "Không — hợp đồng ký từ năm 2017, ngoài window 5 năm",
-      "Có — ngày nghiệm thu (8/2019) nằm trong window 5 năm tính đến 8/2024",
+      "Không - hợp đồng ký từ năm 2017, ngoài window 5 năm",
+      "Có - ngày nghiệm thu (8/2019) nằm trong window 5 năm tính đến 8/2024",
       "Tùy Chủ đầu tư quyết định",
-      "Không — vì đã quá 3 năm kể từ khi hoàn thành"
+      "Không - vì đã quá 3 năm kể từ khi hoàn thành"
     ],
-    "correct_answer": "Có — ngày nghiệm thu (8/2019) nằm trong window 5 năm tính đến 8/2024",
+    "correct_answer": "Có - ngày nghiệm thu (8/2019) nằm trong window 5 năm tính đến 8/2024",
     "explanation": "Time window tính từ ngày completion certificate, không phải ngày ký hợp đồng. Tháng 8/2019 đến tháng 8/2024 là đúng 5 năm, hợp lệ."
   },
   {
     "question": "Công ty bạn đã làm subcontractor cho một dự án USD 5 triệu. Khi khai kinh nghiệm, bạn nên xử lý như thế nào?",
     "options": [
       "Khai đầy đủ vì thực tế bạn đã thực hiện công việc",
-      "Không khai — subcontract thường không được chấp nhận, tránh rủi ro bị loại vì gian lận",
+      "Không khai - subcontract thường không được chấp nhận, tránh rủi ro bị loại vì gian lận",
       "Khai một nửa giá trị để an toàn",
       "Khai nếu có xác nhận từ tổng thầu"
     ],
-    "correct_answer": "Không khai — subcontract thường không được chấp nhận, tránh rủi ro bị loại vì gian lận",
+    "correct_answer": "Không khai - subcontract thường không được chấp nhận, tránh rủi ro bị loại vì gian lận",
     "explanation": "Hầu hết HSMT không chấp nhận subcontract. Khai mà biết không được tính là rủi ro. Nên xem xét tìm đối tác JV thay vì khai không trung thực."
   },
   {
@@ -1135,10 +1135,10 @@ Trong JV, kinh nghiệm của **các thành viên** được cộng lại. Một
   'deadline',
   ARRAY['deadline', 'bid validity', 'submission deadline', 'clarification', 'e-procurement']::text[],
   $objective_6$Sau bài này bạn biết 3 loại deadline cần track trong đấu thầu, cách tính bid validity đúng, và biết lập timeline thực tế cho một gói thầu để không bao giờ bị trễ.$objective_6$,
-  $explanation_6$Trong đấu thầu, "deadline" không chỉ là một ngày duy nhất — có ít nhất 3 mốc thời gian quan trọng bạn phải theo dõi song song. Ngoài ra còn có "bid validity period" — thời gian hồ sơ của bạn có hiệu lực sau khi nộp, thường là 90–120 ngày. Hiểu rõ và quản lý tốt những mốc này là kỹ năng cơ bản của người làm thầu chuyên nghiệp.$explanation_6$,
+  $explanation_6$Trong đấu thầu, "deadline" không chỉ là một ngày duy nhất - có ít nhất 3 mốc thời gian quan trọng bạn phải theo dõi song song. Ngoài ra còn có "bid validity period" - thời gian hồ sơ của bạn có hiệu lực sau khi nộp, thường là 90–120 ngày. Hiểu rõ và quản lý tốt những mốc này là kỹ năng cơ bản của người làm thầu chuyên nghiệp.$explanation_6$,
   $content_6$## 3 loại deadline cần track
 
-### Deadline 1 — Clarification Deadline
+### Deadline 1 - Clarification Deadline
 
 Là ngày cuối cùng bạn được gửi câu hỏi làm rõ HSMT đến Chủ đầu tư.
 
@@ -1153,13 +1153,13 @@ Tại sao quan trọng:
 
 ---
 
-### Deadline 2 — Submission Deadline (Ngày nộp thầu)
+### Deadline 2 - Submission Deadline (Ngày nộp thầu)
 
 Ngày giờ chính xác bạn phải nộp hồ sơ hoàn chỉnh.
 
 Thông tin cần ghi rõ:
 - Ngày (ví dụ: 15/08/2024)
-- Giờ (ví dụ: 09:00 AM — theo giờ địa phương của Chủ đầu tư)
+- Giờ (ví dụ: 09:00 AM - theo giờ địa phương của Chủ đầu tư)
 - Múi giờ (quan trọng với gói thầu quốc tế)
 - Địa điểm nộp cứng (nếu có) hoặc cổng nộp online
 
@@ -1167,7 +1167,7 @@ Thông tin cần ghi rõ:
 
 ---
 
-### Deadline 3 — Bid Validity Period (Thời hạn hiệu lực hồ sơ)
+### Deadline 3 - Bid Validity Period (Thời hạn hiệu lực hồ sơ)
 
 Không phải deadline theo nghĩa nộp, mà là khoảng thời gian hồ sơ của bạn **phải duy trì hiệu lực** sau khi nộp.
 
@@ -1205,7 +1205,7 @@ Lý do: Sau khi bid validity hết, Chủ đầu tư cần thêm thời gian đ�
 
 ---
 
-## Timeline planning — nên bắt đầu bao lâu trước deadline?
+## Timeline planning - nên bắt đầu bao lâu trước deadline?
 
 Nguyên tắc: Làm ngược từ deadline ra ngoài.
 [SUBMISSION DEADLINE]
@@ -1229,18 +1229,18 @@ Nguyên tắc: Làm ngược từ deadline ra ngoài.
 ## Ví dụ timeline thực tế: gói thầu 21 ngày
 
 Gói thầu phát hành ngày 01/08/2024, submission deadline 22/08/2024 (21 ngày).
-01/08 — Nhận HSMT. Đọc ngay BDS + Qualification Criteria.
-02/08 — Lập checklist yêu cầu. Phân tích GAP năng lực.
-03/08 — Gửi câu hỏi clarification (nếu có điều cần làm rõ).
-04/08 — Bắt đầu gom tài liệu pháp lý, kinh nghiệm.
-05/08 — Xin phát hành bảo lãnh ngân hàng (cần 5 ngày làm việc → có ngày 12/08).
-06-12/08 — Viết Technical Proposal, chuẩn bị Financial Proposal.
-12/08 — Nhận bảo lãnh ngân hàng. Kiểm tra kỹ trước khi nhận.
-13-15/08 — Hoàn thiện tất cả nội dung, gộp hồ sơ.
-16-19/08 — Review kỹ lần 2, ký tên đóng dấu, đóng gói.
-20/08 — Final check toàn bộ theo checklist 10 mục.
-21/08 sáng — Upload hoàn chỉnh (cả ngày để xử lý sự cố kỹ thuật).
-22/08 — Submission deadline. Không làm gì thêm với hồ sơ.
+01/08 - Nhận HSMT. Đọc ngay BDS + Qualification Criteria.
+02/08 - Lập checklist yêu cầu. Phân tích GAP năng lực.
+03/08 - Gửi câu hỏi clarification (nếu có điều cần làm rõ).
+04/08 - Bắt đầu gom tài liệu pháp lý, kinh nghiệm.
+05/08 - Xin phát hành bảo lãnh ngân hàng (cần 5 ngày làm việc → có ngày 12/08).
+06-12/08 - Viết Technical Proposal, chuẩn bị Financial Proposal.
+12/08 - Nhận bảo lãnh ngân hàng. Kiểm tra kỹ trước khi nhận.
+13-15/08 - Hoàn thiện tất cả nội dung, gộp hồ sơ.
+16-19/08 - Review kỹ lần 2, ký tên đóng dấu, đóng gói.
+20/08 - Final check toàn bộ theo checklist 10 mục.
+21/08 sáng - Upload hoàn chỉnh (cả ngày để xử lý sự cố kỹ thuật).
+22/08 - Submission deadline. Không làm gì thêm với hồ sơ.
 
 > **Lưu ý thực tế:** 21 ngày là timeline rất ngắn. Với gói thầu phức tạp (nhiều yêu cầu kỹ thuật, nhiều volume), 21 ngày thường không đủ để làm hồ sơ chất lượng. Đây là tín hiệu cần cân nhắc có tham gia không, hoặc phải huy động đủ nguồn lực ngay từ ngày đầu.
 
@@ -1285,8 +1285,8 @@ Giải pháp: Confirm lại ID gói thầu trước khi submit.$content_6$,
 ]$mistakes_6$::jsonb,
   $fatal_6$[
   {
-    "description": "Nộp hồ sơ sau thời điểm đóng thầu — dù chỉ 1 phút",
-    "law_reference": "Điều 15, Luật Đấu thầu 2023 — cần verify"
+    "description": "Nộp hồ sơ sau thời điểm đóng thầu - dù chỉ 1 phút",
+    "law_reference": "Điều 15, Luật Đấu thầu 2023 - cần verify"
   }
 ]$fatal_6$::jsonb,
   ARRAY['bao-lanh-du-thau-khong-duoc-sai', 'top-loi-bi-loai-chi-tu', 'quy-trinh-clarification', 'cau-truc-hsmt-doc-tu-dau']::text[],
@@ -1316,12 +1316,12 @@ Giải pháp: Confirm lại ID gói thầu trước khi submit.$content_6$,
   {
     "question": "Chủ đầu tư yêu cầu gia hạn bid validity. Nhà thầu có được từ chối không?",
     "options": [
-      "Không — bắt buộc phải đồng ý",
-      "Có — nhà thầu có thể từ chối nhưng sẽ mất bid security",
-      "Có — từ chối mà không mất bid security",
+      "Không - bắt buộc phải đồng ý",
+      "Có - nhà thầu có thể từ chối nhưng sẽ mất bid security",
+      "Có - từ chối mà không mất bid security",
       "Tùy vào lý do Chủ đầu tư đưa ra"
     ],
-    "correct_answer": "Có — nhà thầu có thể từ chối nhưng sẽ mất bid security",
+    "correct_answer": "Có - nhà thầu có thể từ chối nhưng sẽ mất bid security",
     "explanation": "Nhà thầu có quyền từ chối gia hạn, nhưng khi đó bid security sẽ bị tịch thu và hồ sơ không còn được xem xét."
   }
 ]$quiz_6$::jsonb,
@@ -1330,16 +1330,16 @@ Giải pháp: Confirm lại ID gói thầu trước khi submit.$content_6$,
 ),
 (
   'quy-trinh-clarification',
-  $title_7$Clarification — hỏi đúng cách, đúng lúc$title_7$,
+  $title_7$Clarification - hỏi đúng cách, đúng lúc$title_7$,
   $titleen_7$The Clarification Process$titleen_7$,
   1,
   'quy-trinh',
   ARRAY['clarification', 'addendum', 'HSMT', 'câu hỏi làm rõ', 'quy trình']::text[],
-  $objective_7$Sau bài này bạn hiểu clarification là gì, khi nào nên hỏi, và biết cách viết một câu hỏi clarification đúng chuẩn — kèm template thực tế có thể dùng ngay.$objective_7$,
-  $explanation_7$Clarification là quyền của bạn: khi HSMT có điều gì không rõ, bạn được phép hỏi Chủ đầu tư trong thời hạn quy định. Điều quan trọng là câu trả lời của Chủ đầu tư có giá trị pháp lý như Addendum và được gửi đến tất cả nhà thầu — nên bạn vừa giải quyết được thắc mắc của mình, vừa tránh bất lợi khi đối thủ nhận được thông tin mà bạn không biết. Hỏi đúng là kỹ năng, không phải hỏi vu vơ.$explanation_7$,
+  $objective_7$Sau bài này bạn hiểu clarification là gì, khi nào nên hỏi, và biết cách viết một câu hỏi clarification đúng chuẩn - kèm template thực tế có thể dùng ngay.$objective_7$,
+  $explanation_7$Clarification là quyền của bạn: khi HSMT có điều gì không rõ, bạn được phép hỏi Chủ đầu tư trong thời hạn quy định. Điều quan trọng là câu trả lời của Chủ đầu tư có giá trị pháp lý như Addendum và được gửi đến tất cả nhà thầu - nên bạn vừa giải quyết được thắc mắc của mình, vừa tránh bất lợi khi đối thủ nhận được thông tin mà bạn không biết. Hỏi đúng là kỹ năng, không phải hỏi vu vơ.$explanation_7$,
   $content_7$## Clarification là gì và tại sao quan trọng?
 
-Trong quá trình chuẩn bị hồ sơ, nhà thầu thường gặp những điểm mơ hồ, mâu thuẫn hoặc không rõ trong HSMT. Thay vì tự đoán, nhà thầu có thể gửi câu hỏi chính thức đến Chủ đầu tư — đây gọi là Request for Clarification.
+Trong quá trình chuẩn bị hồ sơ, nhà thầu thường gặp những điểm mơ hồ, mâu thuẫn hoặc không rõ trong HSMT. Thay vì tự đoán, nhà thầu có thể gửi câu hỏi chính thức đến Chủ đầu tư - đây gọi là Request for Clarification.
 
 **Tại sao quan trọng:**
 
@@ -1347,7 +1347,7 @@ Trong quá trình chuẩn bị hồ sơ, nhà thầu thường gặp những đi
 Chủ đầu tư phải trả lời bằng văn bản và gửi đến tất cả nhà thầu dưới dạng Addendum hoặc Clarification Notice. Nội dung này trở thành một phần của HSMT, có hiệu lực ràng buộc.
 
 **2. Mọi nhà thầu đều nhận được**
-Chủ đầu tư không được trả lời riêng cho một nhà thầu — tất cả câu trả lời phải được phát hành công khai cho tất cả. Điều này có nghĩa: nếu bạn không hỏi, bạn vẫn nhận được câu trả lời của người khác hỏi.
+Chủ đầu tư không được trả lời riêng cho một nhà thầu - tất cả câu trả lời phải được phát hành công khai cho tất cả. Điều này có nghĩa: nếu bạn không hỏi, bạn vẫn nhận được câu trả lời của người khác hỏi.
 
 **3. Bảo vệ bạn khỏi diễn giải sai**
 Nếu bạn tự diễn giải một yêu cầu mơ hồ và làm hồ sơ theo đó, rủi ro là hồ sơ không đáp ứng đúng ý Chủ đầu tư → bị trừ điểm hoặc bị loại.
@@ -1359,7 +1359,7 @@ Nếu bạn tự diễn giải một yêu cầu mơ hồ và làm hồ sơ theo 
 ### Nên hỏi khi:
 
 - HSMT có điều khoản mâu thuẫn (ví dụ: Section 2 ghi một đằng, BDS ghi một nẻo)
-- Yêu cầu không rõ ràng (ví dụ: "similar experience" — loại công việc nào được tính?)
+- Yêu cầu không rõ ràng (ví dụ: "similar experience" - loại công việc nào được tính?)
 - Yêu cầu kỹ thuật có thể có nhiều cách đáp ứng khác nhau
 - Không chắc tài liệu cụ thể nào được chấp nhận để chứng minh một yêu cầu
 - Thời hạn trong HSMT có vẻ mâu thuẫn nhau
@@ -1369,7 +1369,7 @@ Nếu bạn tự diễn giải một yêu cầu mơ hồ và làm hồ sơ theo 
 - Câu hỏi đã có câu trả lời rõ ràng trong HSMT (đọc kỹ hơn trước)
 - Câu hỏi sẽ lộ thông tin chiến lược của bạn (ví dụ: hỏi chi tiết về giải pháp kỹ thuật bạn định dùng)
 - Câu hỏi có tính thương lượng ("Chúng tôi muốn đề xuất thay thế điều khoản X")
-- Câu hỏi vô nghĩa hoặc quá vụn vặt — làm mất uy tín của bạn trong mắt Chủ đầu tư
+- Câu hỏi vô nghĩa hoặc quá vụn vặt - làm mất uy tín của bạn trong mắt Chủ đầu tư
 
 > **Lưu ý thực tế:** Đừng gửi quá nhiều câu hỏi. 3–5 câu hỏi thực chất tốt hơn 15 câu hỏi vụn vặt. Chủ đầu tư đánh giá năng lực nhà thầu qua cả chất lượng câu hỏi.
 
@@ -1379,26 +1379,26 @@ Nếu bạn tự diễn giải một yêu cầu mơ hồ và làm hồ sơ theo 
 
 Một câu hỏi clarification tốt gồm 4 phần:
 
-### Phần 1 — Tiêu đề rõ ràng
+### Phần 1 - Tiêu đề rõ ràng
 
 Ghi rõ: số gói thầu, tên gói thầu, và đây là Request for Clarification.
 
 Ví dụ:
-Subject: Request for Clarification — Tender No. XYZ-2024-001
+Subject: Request for Clarification - Tender No. XYZ-2024-001
 [Tên gói thầu đầy đủ]
 
 ---
 
-### Phần 2 — Trích dẫn điều khoản cụ thể
+### Phần 2 - Trích dẫn điều khoản cụ thể
 
 Luôn ghi rõ bạn đang hỏi về phần nào của HSMT.
 
 Ví dụ:
-Reference: Section 4.2 — Qualification Criteria, Paragraph 3
+Reference: Section 4.2 - Qualification Criteria, Paragraph 3
 
 ---
 
-### Phần 3 — Câu hỏi rõ ràng, một nghĩa
+### Phần 3 - Câu hỏi rõ ràng, một nghĩa
 
 Câu hỏi phải:
 - Cụ thể, không mơ hồ
@@ -1407,7 +1407,7 @@ Câu hỏi phải:
 
 ---
 
-### Phần 4 — Không lộ thông tin chiến lược
+### Phần 4 - Không lộ thông tin chiến lược
 
 Tránh hỏi kiểu:
 - "Giải pháp X của chúng tôi có được chấp nhận không?" → lộ giải pháp
@@ -1429,7 +1429,7 @@ for the above-referenced tender, and would like to request
 clarification on the following matter:
 
 Question 1:
-Reference: Section 4.2, Paragraph 3 — Similar Experience
+Reference: Section 4.2, Paragraph 3 - Similar Experience
 The Bidding Documents state: "...contracts of similar nature
 in the supply and installation of mechanical systems..."
 Could you please clarify whether experience in the supply
@@ -1457,21 +1457,21 @@ Tình huống phổ biến: Bạn hỏi rõ ràng nhưng nhận được câu tr
 
 Các bước xử lý:
 
-**Bước 1:** Đọc lại câu trả lời kỹ — đôi khi câu trả lời hàm ý rõ ràng hơn bề mặt.
+**Bước 1:** Đọc lại câu trả lời kỹ - đôi khi câu trả lời hàm ý rõ ràng hơn bề mặt.
 
 **Bước 2:** Nếu thực sự không rõ, gửi follow-up clarification với câu hỏi Yes/No cụ thể hơn.
 
-**Bước 3:** Nếu vẫn không nhận được câu trả lời rõ ràng, làm hồ sơ theo cách diễn giải an toàn hơn (conservative interpretation) — và ghi chú trong hồ sơ nếu cần thiết.
+**Bước 3:** Nếu vẫn không nhận được câu trả lời rõ ràng, làm hồ sơ theo cách diễn giải an toàn hơn (conservative interpretation) - và ghi chú trong hồ sơ nếu cần thiết.
 
 **Bước 4:** Document lại toàn bộ câu hỏi và câu trả lời để có bằng chứng nếu sau này có tranh chấp.
 
 ---
 
-## Warning quan trọng — Câu trả lời được gửi đến tất cả nhà thầu
+## Warning quan trọng - Câu trả lời được gửi đến tất cả nhà thầu
 
 Đây vừa là lợi thế vừa là rủi ro:
 
-**Lợi thế:** Bạn không cần phải hỏi tất cả — nếu nhà thầu khác hỏi câu bạn cũng đang thắc mắc, bạn sẽ tự động nhận được câu trả lời.
+**Lợi thế:** Bạn không cần phải hỏi tất cả - nếu nhà thầu khác hỏi câu bạn cũng đang thắc mắc, bạn sẽ tự động nhận được câu trả lời.
 
 **Rủi ro:** Nếu câu hỏi của bạn vô tình tiết lộ chiến lược (ví dụ: hỏi về giải pháp kỹ thuật đặc biệt bạn định dùng), đối thủ sẽ biết hướng đi của bạn.
 
@@ -1500,7 +1500,7 @@ Các bước xử lý:
 ]$mistakes_7$::jsonb,
   $fatal_7$[
   {
-    "description": "Không cập nhật hồ sơ theo Addendum được phát hành sau khi clarification — làm hồ sơ theo HSMT phiên bản cũ",
+    "description": "Không cập nhật hồ sơ theo Addendum được phát hành sau khi clarification - làm hồ sơ theo HSMT phiên bản cũ",
     "law_reference": "Addendum là phần không tách rời của HSMT, có giá trị pháp lý ràng buộc"
   }
 ]$fatal_7$::jsonb,
@@ -1532,11 +1532,11 @@ Các bước xử lý:
     "question": "Chủ đầu tư phát hành Addendum sau khi bạn đã làm xong 80% hồ sơ. Bạn cần làm gì?",
     "options": [
       "Tiếp tục vì hồ sơ gần xong, Addendum ít khi thay đổi nhiều",
-      "Đọc kỹ Addendum và cập nhật hồ sơ theo những gì thay đổi — dù mất thêm thời gian",
+      "Đọc kỹ Addendum và cập nhật hồ sơ theo những gì thay đổi - dù mất thêm thời gian",
       "Gửi email hỏi Chủ đầu tư có cần cập nhật hồ sơ không",
       "Nộp thêm một phụ lục riêng đính kèm Addendum"
     ],
-    "correct_answer": "Đọc kỹ Addendum và cập nhật hồ sơ theo những gì thay đổi — dù mất thêm thời gian",
+    "correct_answer": "Đọc kỹ Addendum và cập nhật hồ sơ theo những gì thay đổi - dù mất thêm thời gian",
     "explanation": "Addendum là phần không tách rời của HSMT. Hồ sơ không phản ánh nội dung Addendum có thể bị coi là không tuân thủ yêu cầu."
   }
 ]$quiz_7$::jsonb,
@@ -1545,8 +1545,8 @@ Các bước xử lý:
 ),
 (
   'quick-scan-hsmt-5-phut',
-  $title_8$Quick Scan HSMT — 5 phút biết có nên làm không$title_8$,
-  $titleen_8$HSMT Quick Scan — GO or NO-GO in 5 Minutes$titleen_8$,
+  $title_8$Quick Scan HSMT - 5 phút biết có nên làm không$title_8$,
+  $titleen_8$HSMT Quick Scan - GO or NO-GO in 5 Minutes$titleen_8$,
   2,
   'quy-trinh',
   ARRAY['quick scan', 'GO/NO-GO', 'HSMT', 'red flags', 'thực chiến']::text[],
@@ -1560,18 +1560,18 @@ Các bước xử lý:
 Đó là cách đọc sai.
 
 **Quick Scan là gì?**
-Là kỹ năng đọc lướt có chủ đích — trong 5–10 phút đầu, bạn chỉ tìm đúng 5 thông tin quyết định. Nếu một trong số đó là fatal → NO-GO ngay, không đọc tiếp.
+Là kỹ năng đọc lướt có chủ đích - trong 5–10 phút đầu, bạn chỉ tìm đúng 5 thông tin quyết định. Nếu một trong số đó là fatal → NO-GO ngay, không đọc tiếp.
 
 Tư duy đúng:
 
 > "HSMT dài 200 trang nhưng quyết định GO/NO-GO thường nằm ở 10 trang quan trọng nhất."$explanation_8$,
-  $content_8$### Framework Quick Scan — 5 bước (theo thứ tự này)
+  $content_8$### Framework Quick Scan - 5 bước (theo thứ tự này)
 
 Luôn check theo đúng thứ tự. Nếu bước nào fail → dừng lại, không cần check tiếp.
 
 ---
 
-#### Bước 1: Điều kiện tham gia — "Mình có được phép dự không?"
+#### Bước 1: Điều kiện tham gia - "Mình có được phép dự không?"
 
 Tìm ở: Mục "Eligibility", "Điều kiện tham gia", "Tư cách nhà thầu" (thường ở đầu HSMT hoặc Section 2).
 
@@ -1585,7 +1585,7 @@ Cần check:
 
 ---
 
-#### Bước 2: Bảo lãnh dự thầu — "Mình có lo được tiền không?"
+#### Bước 2: Bảo lãnh dự thầu - "Mình có lo được tiền không?"
 
 Tìm ở: Mục "Bid Security", "Bảo đảm dự thầu".
 
@@ -1599,7 +1599,7 @@ Cần check:
 
 ---
 
-#### Bước 3: Kinh nghiệm tương tự — "Mình có đủ hồ sơ chứng minh không?"
+#### Bước 3: Kinh nghiệm tương tự - "Mình có đủ hồ sơ chứng minh không?"
 
 Tìm ở: Mục "Experience", "Kinh nghiệm tương tự", "Similar Contracts".
 
@@ -1613,7 +1613,7 @@ Cần check:
 
 ---
 
-#### Bước 4: Deadline — "Mình có đủ thời gian làm không?"
+#### Bước 4: Deadline - "Mình có đủ thời gian làm không?"
 
 Cần check:
 - Ngày nộp hồ sơ (deadline)
@@ -1630,7 +1630,7 @@ Cần check:
 
 ---
 
-#### Bước 5: Red flags & Suspicious Clauses — "Có bẫy không?"
+#### Bước 5: Red flags & Suspicious Clauses - "Có bẫy không?"
 
 Một số dấu hiệu cần cảnh giác:
 
@@ -1648,7 +1648,7 @@ Một số dấu hiệu cần cảnh giác:
 ### Template Quick Scan
 
 ```
-QUICK SCAN — [Tên gói thầu]
+QUICK SCAN - [Tên gói thầu]
 Ngày check: ___________
 Người check: ___________
 
@@ -1760,7 +1760,7 @@ Action tiếp theo: ___________
   ARRAY['cau-truc-hsmt-doc-tu-dau', 'bao-lanh-du-thau-khong-duoc-sai', 'kinh-nghiem-tuong-tu-yeu-cau-kho-nhat', 'gap-analysis-nang-luc', 'checklist-truoc-khi-nop']::text[],
   $quiz_8$[
   {
-    "question": "Theo framework Quick Scan, bước nào nên check TRƯỚC — kinh nghiệm tương tự hay điều kiện tham gia?",
+    "question": "Theo framework Quick Scan, bước nào nên check TRƯỚC - kinh nghiệm tương tự hay điều kiện tham gia?",
     "options": [
       "Kinh nghiệm tương tự, vì đây là yêu cầu khó nhất",
       "Điều kiện tham gia (nếu không đủ tư cách, check gì cũng vô nghĩa)",
@@ -1785,11 +1785,11 @@ Action tiếp theo: ___________
     "question": "HSMT yêu cầu thông số kỹ thuật rất cụ thể, chỉ khớp đúng 1 thương hiệu. Đây là dấu hiệu gì?",
     "options": [
       "Yêu cầu bình thường, không cần kiểm tra thêm",
-      "Red flag — gói thầu có thể đã được \"thiết kế\" cho nhà thầu/nhà cung cấp cụ thể",
+      "Red flag - gói thầu có thể đã được \"thiết kế\" cho nhà thầu/nhà cung cấp cụ thể",
       "Dấu hiệu hồ sơ đơn giản, dễ nộp",
       "Chỉ là vấn đề format, không ảnh hưởng quyết định GO/NO-GO"
     ],
-    "correct_answer": "Red flag — gói thầu có thể đã được \"thiết kế\" cho nhà thầu/nhà cung cấp cụ thể",
+    "correct_answer": "Red flag - gói thầu có thể đã được \"thiết kế\" cho nhà thầu/nhà cung cấp cụ thể",
     "explanation": "Thông số quá cụ thể, chỉ khớp một thương hiệu là red flag. Cần đọc kỹ hơn, cân nhắc clarification hoặc NO-GO nếu risk quá cao."
   }
 ]$quiz_8$::jsonb,
@@ -1798,7 +1798,7 @@ Action tiếp theo: ___________
 ),
 (
   'gap-analysis-nang-luc',
-  $title_9$GAP Analysis — Đối chiếu năng lực vs yêu cầu HSMT$title_9$,
+  $title_9$GAP Analysis - Đối chiếu năng lực vs yêu cầu HSMT$title_9$,
   $titleen_9$Capability GAP Analysis$titleen_9$,
   2,
   'quy-trinh',
@@ -1866,7 +1866,7 @@ Cần chuẩn bị:
 - Bản sao chứng chỉ hành nghề
 - Xác nhận cam kết tham gia dự án
 
-**Cảnh báo:** Key personnel phải "cam kết tham gia" — nếu họ đang trong hợp đồng khác, đây là GAP cần xử lý.
+**Cảnh báo:** Key personnel phải "cam kết tham gia" - nếu họ đang trong hợp đồng khác, đây là GAP cần xử lý.
 
 ---
 
@@ -1883,7 +1883,7 @@ Các yêu cầu thường gặp:
 ### Template GAP Analysis
 
 ```
-GAP ANALYSIS — [Tên gói thầu]
+GAP ANALYSIS - [Tên gói thầu]
 Ngày: ___________
 
 | Nhóm | Yêu cầu HSMT | Tình trạng công ty | GAP | Mức độ | Hướng xử lý |
@@ -1905,21 +1905,21 @@ Ngày: ___________
 
 ### Cách xử lý từng loại GAP
 
-#### GAP THẤP — Tự xử lý
+#### GAP THẤP - Tự xử lý
 Ví dụ: thiếu một số tài liệu, format CV chưa chuẩn
 → Xử lý trong nội bộ, không cần đối tác
 
-#### GAP TRUNG BÌNH — Cần subcontractor
+#### GAP TRUNG BÌNH - Cần subcontractor
 Ví dụ: thiếu 1 hợp đồng kinh nghiệm hoặc thiếu một loại thiết bị
 → Ký hợp đồng subcontract với đơn vị có kinh nghiệm
 → Lưu ý: không phải HSMT nào cũng chấp nhận subcontract cho phần core
 
-#### GAP CAO — Cân nhắc JV
+#### GAP CAO - Cân nhắc JV
 Ví dụ: thiếu doanh thu, thiếu nhiều hợp đồng tương tự
 → Liên danh với đối tác bổ sung năng lực
 → Cần thỏa thuận JV rõ ràng trước khi nộp hồ sơ
 
-#### GAP FATAL — NO-GO
+#### GAP FATAL - NO-GO
 Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu tư cách pháp lý
 → Không thể xử lý trong thời gian còn lại
 → Quyết định NO-GO, chuyển nguồn lực sang gói khác
@@ -1939,13 +1939,13 @@ Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu
 | Chứng chỉ tư vấn PCCC cấp tỉnh | Có | Không có GAP | - | OK |
 | PM: ≥ 8 năm kinh nghiệm PCCC | PM: 5 năm | -3 năm | CAO | Tìm PM bên ngoài hoặc JV |
 
-→ **Kết luận:** Conditional GO — cần xử lý 2 GAP trước khi quyết định nộp.
+→ **Kết luận:** Conditional GO - cần xử lý 2 GAP trước khi quyết định nộp.
 
 ---$content_9$,
   $mistakes_9$[
   {
     "title": "Tự đánh lừa bản thân về năng lực",
-    "description": "\"Hợp đồng này chắc tính được\" — nhưng thực ra không đúng định nghĩa \"tương tự\" của HSMT.",
+    "description": "\"Hợp đồng này chắc tính được\" - nhưng thực ra không đúng định nghĩa \"tương tự\" của HSMT.",
     "severity": "medium"
   },
   {
@@ -1970,12 +1970,12 @@ Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu
   {
     "question": "GAP \"BCTC chưa được kiểm toán\" thuộc mức độ nào?",
     "options": [
-      "Thấp — có thể bổ sung sau khi nộp",
-      "Trung bình — chỉ cần giải trình",
-      "Cao — có thể xử lý bằng nhân sự nội bộ",
-      "FATAL — không thể xử lý trong thời gian ngắn"
+      "Thấp - có thể bổ sung sau khi nộp",
+      "Trung bình - chỉ cần giải trình",
+      "Cao - có thể xử lý bằng nhân sự nội bộ",
+      "FATAL - không thể xử lý trong thời gian ngắn"
     ],
-    "correct_answer": "FATAL — không thể xử lý trong thời gian ngắn",
+    "correct_answer": "FATAL - không thể xử lý trong thời gian ngắn",
     "explanation": "Nếu HSMT yêu cầu báo cáo tài chính đã kiểm toán mà công ty chưa có, đây thường là GAP nghiêm trọng và không xử lý được trong vài ngày."
   },
   {
@@ -2016,29 +2016,29 @@ Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu
 - Áp dụng checklist 5 nhóm cho bất kỳ gói thầu nào
 - Biết 5 thứ cần double-check trong 30 phút cuối trước khi đóng gói
 - Có checklist riêng cho đấu thầu online (e-procurement)$objective_10$,
-  $explanation_10$Một công ty từng bị loại khỏi gói thầu 20 tỷ đồng — không phải vì thiếu năng lực, không phải vì giá cao, mà vì **quên đóng dấu trang cuối của hồ sơ pháp lý**.
+  $explanation_10$Một công ty từng bị loại khỏi gói thầu 20 tỷ đồng - không phải vì thiếu năng lực, không phải vì giá cao, mà vì **quên đóng dấu trang cuối của hồ sơ pháp lý**.
 
 Hồ sơ dự thầu không phải thi kiến thức. Đây là bài thi về **sự cẩn thận và quy trình**.
 
 > "Một lỗi nhỏ trong hồ sơ có thể triệt tiêu 3 tuần làm việc."
 
 Checklist không phải để check những thứ phức tạp. Checklist để đảm bảo bạn không bỏ sót những thứ **đơn giản nhưng chí tử**.$explanation_10$,
-  $content_10$### Checklist đầy đủ — 5 nhóm
+  $content_10$### Checklist đầy đủ - 5 nhóm
 
 ---
 
 #### NHÓM 1: Hồ sơ pháp lý
 
-- [ ] Giấy phép kinh doanh — bản sao công chứng còn hiệu lực
+- [ ] Giấy phép kinh doanh - bản sao công chứng còn hiệu lực
 - [ ] Giấy phép hành nghề / chứng chỉ đặc thù (nếu yêu cầu)
 - [ ] Điều lệ công ty (nếu yêu cầu)
 - [ ] Quyết định bổ nhiệm người đại diện pháp luật
-- [ ] Giấy ủy quyền ký (nếu người ký không phải người đại diện pháp luật) — công chứng
+- [ ] Giấy ủy quyền ký (nếu người ký không phải người đại diện pháp luật) - công chứng
 - [ ] Tất cả trang có chữ ký: đúng người, đúng chức danh
 - [ ] Tất cả trang có con dấu: đúng vị trí, dấu rõ ràng, không bị lệch
 - [ ] Số bộ hồ sơ: đúng số lượng HSMT yêu cầu (vd: 1 gốc + 2 bản sao)
 
-**Note:** Một số HSMT yêu cầu công chứng toàn bộ bộ pháp lý — đọc kỹ và không tự suy diễn.
+**Note:** Một số HSMT yêu cầu công chứng toàn bộ bộ pháp lý - đọc kỹ và không tự suy diễn.
 
 ---
 
@@ -2076,7 +2076,7 @@ Checklist không phải để check những thứ phức tạp. Checklist để 
 - [ ] Đơn vị tiền tệ: đúng và nhất quán trong toàn bộ bảng giá
 - [ ] Chữ ký và đóng dấu trên bảng giá
 - [ ] Phụ lục giá (nếu có): đầy đủ, nhất quán với bảng giá chính
-- [ ] Thuế: đã bao gồm hay chưa — phải khớp với yêu cầu HSMT
+- [ ] Thuế: đã bao gồm hay chưa - phải khớp với yêu cầu HSMT
 - [ ] Giá có điền bằng chữ (nếu yêu cầu): khớp với số
 
 **Warning:** Sai số học trong bảng giá (vd: cộng sai) có thể bị coi là lỗi kỹ thuật. Luôn cộng lại bằng tay hoặc excel riêng trước khi nộp.
@@ -2100,11 +2100,11 @@ Checklist không phải để check những thứ phức tạp. Checklist để 
 
 Trước khi đóng gói lần cuối, dừng lại 30 phút và check 5 điểm này:
 
-1. **Chữ ký & con dấu** — Lướt qua từng trang, kiểm tra chỗ cần ký đã ký chưa
-2. **Số tiền bảo lãnh** — Đọc lại thư bảo lãnh, đối chiếu với HSMT
-3. **Tổng giá trong đơn dự thầu** — Cộng lại một lần nữa
-4. **Số bộ hồ sơ** — Đếm lại đủ số bộ gốc + sao
-5. **Giờ nộp & địa điểm** — Xác nhận lần cuối không có thay đổi trong Addendum
+1. **Chữ ký & con dấu** - Lướt qua từng trang, kiểm tra chỗ cần ký đã ký chưa
+2. **Số tiền bảo lãnh** - Đọc lại thư bảo lãnh, đối chiếu với HSMT
+3. **Tổng giá trong đơn dự thầu** - Cộng lại một lần nữa
+4. **Số bộ hồ sơ** - Đếm lại đủ số bộ gốc + sao
+5. **Giờ nộp & địa điểm** - Xác nhận lần cuối không có thay đổi trong Addendum
 
 ---
 
@@ -2153,7 +2153,7 @@ Kết quả: loại ở vòng đầu tiên.
   },
   {
     "title": "Tổng giá trong đơn dự thầu sai so với phụ lục",
-    "description": "Ban mời thầu sẽ dùng số nào? Mỗi HSMT có quy định khác nhau — và đây thường là điểm tranh cãi không hay.",
+    "description": "Ban mời thầu sẽ dùng số nào? Mỗi HSMT có quy định khác nhau - và đây thường là điểm tranh cãi không hay.",
     "severity": "medium"
   },
   {
@@ -2169,22 +2169,22 @@ Kết quả: loại ở vòng đầu tiên.
     "question": "Bạn upload xong toàn bộ file lên hệ thống e-procurement. Bước tiếp theo cần làm gì?",
     "options": [
       "Đóng trình duyệt vì upload xong là đã nộp",
-      "Bấm \"Nộp hồ sơ\" / Submit — upload chưa phải là nộp",
+      "Bấm \"Nộp hồ sơ\" / Submit - upload chưa phải là nộp",
       "Chỉ gửi email báo đã upload",
       "Đợi hệ thống tự submit sau deadline"
     ],
-    "correct_answer": "Bấm \"Nộp hồ sơ\" / Submit — upload chưa phải là nộp",
+    "correct_answer": "Bấm \"Nộp hồ sơ\" / Submit - upload chưa phải là nộp",
     "explanation": "Nhiều hệ thống tách upload file và submit hồ sơ thành 2 bước. Upload xong nhưng chưa bấm Submit thì hồ sơ có thể chưa được nộp."
   },
   {
     "question": "Tổng giá trong đơn dự thầu khác với tổng giá trong phụ lục giá. Điều này có vấn đề gì?",
     "options": [
       "Không vấn đề gì, bên mời thầu sẽ tự chọn số thấp hơn",
-      "Mâu thuẫn số liệu — tùy HSMT sẽ xử lý khác nhau, nhưng đây là lỗi nghiêm trọng cần tránh",
+      "Mâu thuẫn số liệu - tùy HSMT sẽ xử lý khác nhau, nhưng đây là lỗi nghiêm trọng cần tránh",
       "Chỉ cần sửa sau khi trúng thầu",
       "Đây là lỗi format, không ảnh hưởng đánh giá"
     ],
-    "correct_answer": "Mâu thuẫn số liệu — tùy HSMT sẽ xử lý khác nhau, nhưng đây là lỗi nghiêm trọng cần tránh",
+    "correct_answer": "Mâu thuẫn số liệu - tùy HSMT sẽ xử lý khác nhau, nhưng đây là lỗi nghiêm trọng cần tránh",
     "explanation": "Mâu thuẫn giá là rủi ro lớn vì ảnh hưởng trực tiếp đến đánh giá hồ sơ. Phải kiểm tra trước khi nộp."
   },
   {
@@ -2204,8 +2204,8 @@ Kết quả: loại ở vòng đầu tiên.
 ),
 (
   'xu-ly-upload-loi-e-procurement',
-  $title_11$Nộp Thầu Online — Xử Lý Lỗi Upload và Sự Cố Kỹ Thuật$title_11$,
-  $titleen_11$E-Procurement Submission — Troubleshooting$titleen_11$,
+  $title_11$Nộp Thầu Online - Xử Lý Lỗi Upload và Sự Cố Kỹ Thuật$title_11$,
+  $titleen_11$E-Procurement Submission - Troubleshooting$titleen_11$,
   2,
   'quy-trinh',
   ARRAY['e-procurement', 'upload', 'submission deadline', 'sự cố kỹ thuật', 'nộp thầu online']::text[],
@@ -2214,13 +2214,13 @@ Kết quả: loại ở vòng đầu tiên.
 - Xử lý được 5 lỗi upload phổ biến nhất
 - Áp dụng nguyên tắc vàng để tránh sự cố vào phút chót
 - Biết cần làm gì nếu hệ thống gặp sự cố gần deadline$objective_11$,
-  $explanation_11$E-procurement ra đời để làm đấu thầu minh bạch hơn. Nhưng thực tế: hệ thống online thêm một lớp rủi ro mới — rủi ro kỹ thuật.
+  $explanation_11$E-procurement ra đời để làm đấu thầu minh bạch hơn. Nhưng thực tế: hệ thống online thêm một lớp rủi ro mới - rủi ro kỹ thuật.
 
 Hồ sơ hoàn hảo, nhưng upload lỗi vào đúng ngày deadline = kết quả giống hệt nộp trễ = bị loại.
 
 Không giống nộp hồ sơ giấy, bạn không thể "cầm tay chạy nộp" nếu hệ thống gặp vấn đề lúc 8:55 sáng.
 
-> "Chuẩn bị cho rủi ro kỹ thuật không phải lo xa — đó là bắt buộc."$explanation_11$,
+> "Chuẩn bị cho rủi ro kỹ thuật không phải lo xa - đó là bắt buộc."$explanation_11$,
   $content_11$### Các hệ thống e-procurement phổ biến tại Việt Nam
 
 | Hệ thống | Đơn vị vận hành | Thường dùng cho |
@@ -2231,7 +2231,7 @@ Không giống nộp hồ sơ giấy, bạn không thể "cầm tay chạy nộp
 | Hệ thống của EVN | EVN | Gói thầu ngành điện |
 | Hệ thống của các tập đoàn lớn | Tự phát triển | Gói thầu nội bộ doanh nghiệp |
 
-**Quan trọng nhất:** Hệ thống mạng đấu thầu quốc gia (muasamcong.mpi.gov.vn) — dùng cho hầu hết các gói thầu vốn nhà nước, ODA.
+**Quan trọng nhất:** Hệ thống mạng đấu thầu quốc gia (muasamcong.mpi.gov.vn) - dùng cho hầu hết các gói thầu vốn nhà nước, ODA.
 
 Trước mỗi gói thầu, xác nhận:
 - Hệ thống nào đang dùng
@@ -2256,7 +2256,7 @@ Trước mỗi gói thầu, xác nhận:
 - Tách file lớn thành nhiều file nhỏ (nếu hệ thống cho phép)
 - Xóa metadata thừa trong file Word/Excel trước khi convert sang PDF
 
-**Phòng ngừa:** Sau khi scan/tạo toàn bộ file, kiểm tra dung lượng trước — đừng để phát hiện khi đang upload.
+**Phòng ngừa:** Sau khi scan/tạo toàn bộ file, kiểm tra dung lượng trước - đừng để phát hiện khi đang upload.
 
 ---
 
@@ -2282,7 +2282,7 @@ Trước mỗi gói thầu, xác nhận:
 
 **Triệu chứng:** Tốc độ upload giảm mạnh, trang web không phản hồi, đợi lâu không thấy progress.
 
-**Nguyên nhân:** Nhiều nhà thầu upload cùng lúc vào giờ chót — server quá tải. Đây là tình huống xảy ra **thường xuyên**.
+**Nguyên nhân:** Nhiều nhà thầu upload cùng lúc vào giờ chót - server quá tải. Đây là tình huống xảy ra **thường xuyên**.
 
 **Cách xử lý khi đang gặp:**
 - Không refresh trang nếu đang upload (sẽ mất progress)
@@ -2339,14 +2339,14 @@ Nếu hệ thống sập hoặc có lỗi nghiêm trọng gần deadline và b�
 
 **Bước 4:** Lưu tất cả bằng chứng liên lạc (email, log cuộc gọi)
 
-**Quan trọng:** Đây chỉ là backup plan — không phải giải pháp chính. Phần lớn trường hợp, nếu không có xác nhận gia hạn chính thức từ Bên mời thầu, hồ sơ vẫn bị coi là nộp trễ. Tốt nhất: upload sớm để không bao giờ cần dùng backup plan này.
+**Quan trọng:** Đây chỉ là backup plan - không phải giải pháp chính. Phần lớn trường hợp, nếu không có xác nhận gia hạn chính thức từ Bên mời thầu, hồ sơ vẫn bị coi là nộp trễ. Tốt nhất: upload sớm để không bao giờ cần dùng backup plan này.
 
 ---
 
 ### Tài liệu cần lưu sau khi nộp thành công
 
-- [ ] Screenshot màn hình xác nhận "Nộp thành công" — có timestamp
-- [ ] Biên nhận điện tử (nếu hệ thống cấp) — lưu PDF
+- [ ] Screenshot màn hình xác nhận "Nộp thành công" - có timestamp
+- [ ] Biên nhận điện tử (nếu hệ thống cấp) - lưu PDF
 - [ ] Danh sách file đã upload và trạng thái từng file
 - [ ] Screenshot trang tổng quan hồ sơ với trạng thái "Đã nộp"
 
@@ -2356,11 +2356,11 @@ Nếu hệ thống sập hoặc có lỗi nghiêm trọng gần deadline và b�
 
 **Tình huống:** Deadline 9:00 sáng thứ Hai. Nhà thầu A bắt đầu upload lúc 8:30 sáng.
 
-8:30 — Bắt đầu upload. File đầu tiên 45MB → hệ thống báo lỗi file quá lớn (giới hạn 20MB).
-8:35 — Compress PDF. Upload lại. File thứ 2 tên `Hồ sơ kỹ thuật (bản chính).pdf` → lỗi tên file.
-8:42 — Đổi tên, upload lại. Hệ thống bắt đầu chậm vì nhiều người cùng upload.
-8:55 — Vẫn còn 3 file chưa upload. Session hết hạn.
-9:00 — Deadline. Hồ sơ chưa được Submit.
+8:30 - Bắt đầu upload. File đầu tiên 45MB → hệ thống báo lỗi file quá lớn (giới hạn 20MB).
+8:35 - Compress PDF. Upload lại. File thứ 2 tên `Hồ sơ kỹ thuật (bản chính).pdf` → lỗi tên file.
+8:42 - Đổi tên, upload lại. Hệ thống bắt đầu chậm vì nhiều người cùng upload.
+8:55 - Vẫn còn 3 file chưa upload. Session hết hạn.
+9:00 - Deadline. Hồ sơ chưa được Submit.
 
 → Kết quả: Bị loại.
 
@@ -2468,8 +2468,8 @@ insert into public.lessons (
 ) values
 (
   'compliance-matrix-ky-nang-core',
-  $sup_title_0$Compliance Matrix — Kỹ năng đối chiếu requirement như chuyên gia$sup_title_0$,
-  $sup_titleen_0$Compliance Matrix — The Core Skill of Technical Bidding$sup_titleen_0$,
+  $sup_title_0$Compliance Matrix - Kỹ năng đối chiếu requirement như chuyên gia$sup_title_0$,
+  $sup_titleen_0$Compliance Matrix - The Core Skill of Technical Bidding$sup_titleen_0$,
   2,
   'quy-trinh',
   ARRAY['compliance matrix', 'technical compliance', 'requirement', 'HSMT', 'thực chiến']::text[],
@@ -2478,11 +2478,11 @@ insert into public.lessons (
 - Xây dựng Compliance Matrix chuẩn cho bất kỳ HSMT nào
 - Biết khi nào dùng "Comply", "Deviate", "Not Applicable" và cách xử lý từng trường hợp
 - Tránh lỗi phổ biến khi điền Compliance Matrix khiến hồ sơ bị trừ điểm$sup_objective_0$,
-  $sup_explanation_0$Hãy tưởng tượng HSMT là một bản danh sách yêu cầu dài 200 trang. Compliance Matrix là bảng tóm tắt nói với Ban mời thầu: "Đây — từng yêu cầu của anh, tôi đáp ứng như thế nào."
+  $sup_explanation_0$Hãy tưởng tượng HSMT là một bản danh sách yêu cầu dài 200 trang. Compliance Matrix là bảng tóm tắt nói với Ban mời thầu: "Đây - từng yêu cầu của anh, tôi đáp ứng như thế nào."
 
 Không có Compliance Matrix, Ban mời thầu phải tự đi tìm trong 200 trang hồ sơ của bạn xem bạn có đáp ứng hay không. Kết quả: mất thời gian của họ, tăng risk bỏ sót của bạn.
 
-Có Compliance Matrix tốt: mọi thứ minh bạch, rõ ràng, dễ chấm điểm — và bạn kiểm soát được câu chuyện.
+Có Compliance Matrix tốt: mọi thứ minh bạch, rõ ràng, dễ chấm điểm - và bạn kiểm soát được câu chuyện.
 
 > "Compliance Matrix không chỉ là tài liệu nộp kèm. Nó là bản đồ để Ban mời thầu thấy bạn hiểu yêu cầu của họ."$sup_explanation_0$,
   $sup_content_0$### Compliance Matrix là gì?
@@ -2493,10 +2493,10 @@ Cấu trúc cơ bản:
 
 | # | Yêu cầu HSMT | Tham chiếu (Ref) | Mức độ đáp ứng | Tài liệu chứng minh | Ghi chú |
 |---|---|---|---|---|---|
-| 1 | Công suất thiết bị ≥ 500kW | Spec 3.2.1 | Comply | Datasheet Model XYZ — Trang 12 | Cung cấp 520kW |
-| 2 | Điện áp vận hành: 380V ±10% | Spec 3.2.2 | Comply | Datasheet Model XYZ — Trang 14 | |
+| 1 | Công suất thiết bị ≥ 500kW | Spec 3.2.1 | Comply | Datasheet Model XYZ - Trang 12 | Cung cấp 520kW |
+| 2 | Điện áp vận hành: 380V ±10% | Spec 3.2.2 | Comply | Datasheet Model XYZ - Trang 14 | |
 | 3 | Chứng nhận CE hoặc tương đương | Spec 4.1 | Comply | Certificate CE No. 12345 | |
-| 4 | Hệ thống giám sát từ xa | Spec 5.3 | Deviate | Proposal Section 4, Trang 22 | Đề xuất giải pháp SCADA thay thế — xem ghi chú |
+| 4 | Hệ thống giám sát từ xa | Spec 5.3 | Deviate | Proposal Section 4, Trang 22 | Đề xuất giải pháp SCADA thay thế - xem ghi chú |
 
 ---
 
@@ -2508,7 +2508,7 @@ Giải pháp của bạn đáp ứng đúng hoặc vượt yêu cầu HSMT.
 
 **Cách điền:** Ghi "Comply" và dẫn đến tài liệu chứng minh cụ thể (trang, mục).
 
-🟢 LOW RISK — Đây là trạng thái tốt nhất.
+🟢 LOW RISK - Đây là trạng thái tốt nhất.
 
 ---
 
@@ -2527,7 +2527,7 @@ Giải pháp của bạn khác với yêu cầu HSMT nhưng vẫn đáp ứng đ
 3. Chứng minh giải pháp thay thế đáp ứng mục tiêu kỹ thuật
 4. Đính kèm tài liệu kỹ thuật hỗ trợ
 
-🟠 HIGH RISK — Chủ đầu tư có quyền không chấp nhận deviation. Cân nhắc kỹ trước khi deviate.
+🟠 HIGH RISK - Chủ đầu tư có quyền không chấp nhận deviation. Cân nhắc kỹ trước khi deviate.
 
 > **Lưu ý thực tế:** Một số HSMT quy định "No Deviation Allowed" cho các yêu cầu bắt buộc (mandatory). Deviate vào những yêu cầu này = loại trực tiếp.
 
@@ -2543,7 +2543,7 @@ Yêu cầu đó không liên quan đến scope của bạn hoặc đã được 
 
 **Cách điền:** Ghi "N/A" và giải thích ngắn gọn lý do.
 
-🟡 MEDIUM — Dùng N/A quá nhiều mà không giải thích có thể gây nghi ngờ.
+🟡 MEDIUM - Dùng N/A quá nhiều mà không giải thích có thể gây nghi ngờ.
 
 ---
 
@@ -2611,17 +2611,17 @@ I = Informational
 | Yêu cầu | Loại | Đáp ứng | Tài liệu |
 |---|---|---|---|
 | Diesel type | M | Comply | Datasheet Cummins C550D5, P.2 |
-| Min 500kVA at 0.8pf | M | Comply | 550kVA — Datasheet P.3 |
+| Min 500kVA at 0.8pf | M | Comply | 550kVA - Datasheet P.3 |
 | 380V/220V | M | Comply | Datasheet P.4 |
 | 50Hz | M | Comply | Datasheet P.4 |
 
-**Ghi chú column:** "Proposed model: Cummins C550D5 — rated 550kVA, exceeds minimum requirement by 10%."
+**Ghi chú column:** "Proposed model: Cummins C550D5 - rated 550kVA, exceeds minimum requirement by 10%."
 
 ---$sup_content_0$,
   $sup_mistakes_0$[
   {
     "title": "Ghi \"Comply\" nhưng không có tài liệu chứng minh",
-    "description": "Ban mời thầu không có căn cứ để verify — thường bị đánh dấu \"không đủ thông tin\" hoặc trừ điểm.",
+    "description": "Ban mời thầu không có căn cứ để verify - thường bị đánh dấu \"không đủ thông tin\" hoặc trừ điểm.",
     "severity": "high"
   },
   {
@@ -2631,7 +2631,7 @@ I = Informational
   },
   {
     "title": "Bỏ sót requirement trong matrix",
-    "description": "Ban mời thầu sẽ coi là \"không đáp ứng\" — ngay cả khi thực ra bạn có giải pháp.",
+    "description": "Ban mời thầu sẽ coi là \"không đáp ứng\" - ngay cả khi thực ra bạn có giải pháp.",
     "severity": "high"
   },
   {
@@ -2641,7 +2641,7 @@ I = Informational
   },
   {
     "title": "Tham chiếu không chính xác",
-    "description": "\"Xem hồ sơ kỹ thuật\" không đủ — phải là \"Vol.2, Section 4.2, Page 18\".",
+    "description": "\"Xem hồ sơ kỹ thuật\" không đủ - phải là \"Vol.2, Section 4.2, Page 18\".",
     "severity": "medium"
   }
 ]$sup_mistakes_0$::jsonb,
@@ -2649,26 +2649,26 @@ I = Informational
   ARRAY['quick-scan-hsmt-5-phut', 'gap-analysis-nang-luc', 'reading-scc-dieu-khoan-nguy-hiem', 'checklist-truoc-khi-nop']::text[],
   $sup_quiz_0$[
   {
-    "question": "HSMT yêu cầu \"equipment shall comply with EN 60947 standard\". Thiết bị của bạn có chứng nhận IEC 60947 — là tiêu chuẩn tương đương nhưng không phải EN. Bạn điền gì trong Compliance Matrix?",
+    "question": "HSMT yêu cầu \"equipment shall comply with EN 60947 standard\". Thiết bị của bạn có chứng nhận IEC 60947 - là tiêu chuẩn tương đương nhưng không phải EN. Bạn điền gì trong Compliance Matrix?",
     "options": [
-      "Comply — IEC và EN là cùng tiêu chuẩn",
-      "Deviate — giải thích IEC 60947 là tiêu chuẩn quốc tế tương đương EN 60947, đính kèm certificate IEC",
-      "N/A — tiêu chuẩn không áp dụng cho thị trường Việt Nam",
-      "Comply — và không cần giải thích thêm"
+      "Comply - IEC và EN là cùng tiêu chuẩn",
+      "Deviate - giải thích IEC 60947 là tiêu chuẩn quốc tế tương đương EN 60947, đính kèm certificate IEC",
+      "N/A - tiêu chuẩn không áp dụng cho thị trường Việt Nam",
+      "Comply - và không cần giải thích thêm"
     ],
-    "correct_answer": "Deviate — giải thích IEC 60947 là tiêu chuẩn quốc tế tương đương EN 60947, đính kèm certificate IEC",
+    "correct_answer": "Deviate - giải thích IEC 60947 là tiêu chuẩn quốc tế tương đương EN 60947, đính kèm certificate IEC",
     "explanation": "Về kỹ thuật, IEC 60947 và EN 60947 có nội dung tương đương, nhưng để an toàn pháp lý và rõ ràng với Ban mời thầu, điền Deviate kèm giải thích là cách đúng nhất. A không sai về kỹ thuật nhưng thiếu transparency."
   },
   {
     "question": "Requirement #12 ghi \"Contractor shall provide 24/7 on-site maintenance team during warranty period.\" Bạn đề xuất on-call response team (đến trong 4 tiếng) thay vì on-site thường trực. Bạn xử lý thế nào?",
     "options": [
-      "Ghi Comply — response 4 tiếng là đủ tốt",
-      "Ghi Deviate — giải thích rõ on-call model, cam kết SLA cụ thể, kèm evidence về effectiveness",
-      "Ghi N/A — đây là yêu cầu vô lý",
+      "Ghi Comply - response 4 tiếng là đủ tốt",
+      "Ghi Deviate - giải thích rõ on-call model, cam kết SLA cụ thể, kèm evidence về effectiveness",
+      "Ghi N/A - đây là yêu cầu vô lý",
       "Bỏ trống dòng này và giải thích trong phần narrative"
     ],
-    "correct_answer": "Ghi Deviate — giải thích rõ on-call model, cam kết SLA cụ thể, kèm evidence về effectiveness",
-    "explanation": "Đây là deviation cần được xử lý minh bạch. Ghi Comply khi không comply (A) là gian lận. N/A (C) không đúng. Bỏ trống (D) là cách tệ nhất — Ban mời thầu sẽ coi là không đáp ứng."
+    "correct_answer": "Ghi Deviate - giải thích rõ on-call model, cam kết SLA cụ thể, kèm evidence về effectiveness",
+    "explanation": "Đây là deviation cần được xử lý minh bạch. Ghi Comply khi không comply (A) là gian lận. N/A (C) không đúng. Bỏ trống (D) là cách tệ nhất - Ban mời thầu sẽ coi là không đáp ứng."
   }
 ]$sup_quiz_0$::jsonb,
   true,
@@ -2676,8 +2676,8 @@ I = Informational
 ),
 (
   'reading-scc-dieu-khoan-nguy-hiem',
-  $sup_title_1$Reading SCC — Tìm điều khoản nguy hiểm trước khi ký$sup_title_1$,
-  $sup_titleen_1$Reading Special Conditions of Contract — Finding the Danger Clauses$sup_titleen_1$,
+  $sup_title_1$Reading SCC - Tìm điều khoản nguy hiểm trước khi ký$sup_title_1$,
+  $sup_titleen_1$Reading Special Conditions of Contract - Finding the Danger Clauses$sup_titleen_1$,
   2,
   'quy-trinh',
   ARRAY['SCC', 'contract risk', 'liquidated damages', 'payment terms', 'commercial risk']::text[],
@@ -2685,7 +2685,7 @@ I = Informational
 - Hiểu tại sao SCC nguy hiểm hơn GCC và phải đọc kỹ như thế nào
 - Nhận biết 6 loại điều khoản nguy hiểm phổ biến nhất trong SCC
 - Biết khi nào nên gửi clarification về SCC, và khi nào nên cân nhắc lại quyết định GO$sup_objective_1$,
-  $sup_explanation_1$GCC (General Conditions of Contract) là template chuẩn — FIDIC, NEC, hoặc mẫu Bộ Xây dựng. Nhiều người biết GCC là gì và không đọc kỹ vì "chuẩn quốc tế mà".
+  $sup_explanation_1$GCC (General Conditions of Contract) là template chuẩn - FIDIC, NEC, hoặc mẫu Bộ Xây dựng. Nhiều người biết GCC là gì và không đọc kỹ vì "chuẩn quốc tế mà".
 
 SCC (Special Conditions of Contract) là nơi Chủ đầu tư **sửa đổi GCC** cho phù hợp với gói thầu cụ thể. Và đây là nơi các điều khoản nguy hiểm thường nằm.
 
@@ -2693,12 +2693,12 @@ SCC (Special Conditions of Contract) là nơi Chủ đầu tư **sửa đổi GC
 
 Nhiều nhà thầu thắng thầu, ký hợp đồng, rồi mới phát hiện ra: payment terms quá dài, LD không có cap, bảo hành quá khắt khe. Lúc đó đã muộn.
 
-**Nguyên tắc:** Đọc SCC **trước** khi quyết định GO — không phải sau khi trúng thầu.$sup_explanation_1$,
+**Nguyên tắc:** Đọc SCC **trước** khi quyết định GO - không phải sau khi trúng thầu.$sup_explanation_1$,
   $sup_content_1$### 6 loại điều khoản nguy hiểm trong SCC
 
 ---
 
-#### Điều khoản 1: Liquidated Damages (LD) — Phạt chậm tiến độ
+#### Điều khoản 1: Liquidated Damages (LD) - Phạt chậm tiến độ
 
 **Là gì:** Mức phạt cố định mỗi ngày/tuần nếu nhà thầu không hoàn thành đúng hạn.
 
@@ -2721,7 +2721,7 @@ Nếu chậm 60 ngày với hợp đồng 10 tỷ: LD = 3 tỷ đồng. Chậm 2
 
 ---
 
-#### Điều khoản 2: Payment Terms — Điều kiện thanh toán
+#### Điều khoản 2: Payment Terms - Điều kiện thanh toán
 
 **Là gì:** Khi nào và bao nhiêu % được thanh toán.
 
@@ -2744,7 +2744,7 @@ Retention: 10% until end of Defects Liability Period (24 months)
 
 ---
 
-#### Điều khoản 3: Defects Liability Period (DLP) — Thời gian bảo hành
+#### Điều khoản 3: Defects Liability Period (DLP) - Thời gian bảo hành
 
 **Là gì:** Thời gian sau khi nghiệm thu nhà thầu vẫn chịu trách nhiệm sửa chữa các lỗi phát sinh.
 
@@ -2757,7 +2757,7 @@ Retention: 10% until end of Defects Liability Period (24 months)
 
 ---
 
-#### Điều khoản 4: Insurance Requirements — Yêu cầu bảo hiểm
+#### Điều khoản 4: Insurance Requirements - Yêu cầu bảo hiểm
 
 **Là gì:** Các loại bảo hiểm nhà thầu phải mua và duy trì trong suốt dự án.
 
@@ -2767,11 +2767,11 @@ Retention: 10% until end of Defects Liability Period (24 months)
 - Ai là Additional Insured?
 - Bảo hiểm phải mua trước ngày nào?
 
-🟡 **MEDIUM:** Nhiều nhà thầu nhỏ không có sẵn các loại bảo hiểm chuyên biệt — và chi phí mua có thể làm lệch tính toán lợi nhuận.
+🟡 **MEDIUM:** Nhiều nhà thầu nhỏ không có sẵn các loại bảo hiểm chuyên biệt - và chi phí mua có thể làm lệch tính toán lợi nhuận.
 
 ---
 
-#### Điều khoản 5: Dispute Resolution — Giải quyết tranh chấp
+#### Điều khoản 5: Dispute Resolution - Giải quyết tranh chấp
 
 **Là gì:** Nếu có tranh chấp, giải quyết bằng cách nào, ở đâu, theo luật nào.
 
@@ -2785,7 +2785,7 @@ Retention: 10% until end of Defects Liability Period (24 months)
 
 ---
 
-#### Điều khoản 6: Force Majeure & Extension of Time — Gia hạn tiến độ
+#### Điều khoản 6: Force Majeure & Extension of Time - Gia hạn tiến độ
 
 **Là gì:** Điều kiện để nhà thầu được gia hạn tiến độ mà không bị phạt LD.
 
@@ -2802,7 +2802,7 @@ Retention: 10% until end of Defects Liability Period (24 months)
 
 **Bước 1:** Tìm SCC trong HSMT (thường là Section 8 hoặc Volume 3)
 
-**Bước 2:** Đối chiếu với GCC — SCC thường ghi rõ "Sub-Clause X.Y is amended as follows" hoặc "The following is added to Sub-Clause X.Y"
+**Bước 2:** Đối chiếu với GCC - SCC thường ghi rõ "Sub-Clause X.Y is amended as follows" hoặc "The following is added to Sub-Clause X.Y"
 
 **Bước 3:** Với 6 điều khoản nguy hiểm trên: tìm và đọc kỹ phần sửa đổi tương ứng
 
@@ -2820,16 +2820,16 @@ Retention: 10% until end of Defects Liability Period (24 months)
 
 ## 4. Ví dụ thực tế
 
-**Gói thầu:** Xây dựng nhà máy chế biến thực phẩm — 50 tỷ VND — 18 tháng.
+**Gói thầu:** Xây dựng nhà máy chế biến thực phẩm - 50 tỷ VND - 18 tháng.
 
 **Phát hiện trong SCC:**
 
 | Điều khoản | Nội dung SCC | Đánh giá |
 |---|---|---|
-| LD | 0.3%/ngày, không có cap | 🔴 FATAL — LD vô hạn |
-| Payment | 10% advance, thanh toán mỗi 3 tháng, retention 10% đến hết 24 tháng bảo hành | 🟠 HIGH — cash flow rất căng |
-| DLP | 24 tháng, restart nếu có defect | 🟠 HIGH — retention bị giữ đến 4 năm sau nếu có defect |
-| Insurance | CAR + TPL + PI, coverage ≥ 120% contract value | 🟡 MEDIUM — cần check phí bảo hiểm |
+| LD | 0.3%/ngày, không có cap | 🔴 FATAL - LD vô hạn |
+| Payment | 10% advance, thanh toán mỗi 3 tháng, retention 10% đến hết 24 tháng bảo hành | 🟠 HIGH - cash flow rất căng |
+| DLP | 24 tháng, restart nếu có defect | 🟠 HIGH - retention bị giữ đến 4 năm sau nếu có defect |
+| Insurance | CAR + TPL + PI, coverage ≥ 120% contract value | 🟡 MEDIUM - cần check phí bảo hiểm |
 
 **Quyết định:**
 - Gửi clarification yêu cầu thêm LD cap ở 10%
@@ -2840,7 +2840,7 @@ Retention: 10% until end of Defects Liability Period (24 months)
   $sup_mistakes_1$[
   {
     "title": "Đọc GCC nhưng bỏ qua SCC",
-    "description": "\"GCC chuẩn quốc tế thì OK\" — nhưng SCC mới là nơi Chủ đầu tư sửa đổi bất lợi.",
+    "description": "\"GCC chuẩn quốc tế thì OK\" - nhưng SCC mới là nơi Chủ đầu tư sửa đổi bất lợi.",
     "severity": "high"
   },
   {
@@ -2865,23 +2865,23 @@ Retention: 10% until end of Defects Liability Period (24 months)
   {
     "question": "SCC ghi: \"Sub-Clause 8.7 [Delay Damages]: Delay damages shall be 0.2% of the Contract Price per day of delay.\" Không có điều khoản nào khác về tổng mức phạt tối đa. Hợp đồng trị giá 20 tỷ. Bạn đánh giá thế nào?",
     "options": [
-      "OK — 0.2%/ngày là mức bình thường trong thị trường",
-      "🔴 FATAL — không có cap LD là rủi ro không giới hạn, cần yêu cầu thêm cap trước khi ký",
-      "Chỉ là rủi ro lý thuyết — không cần quan tâm nếu tự tin hoàn thành đúng tiến độ",
+      "OK - 0.2%/ngày là mức bình thường trong thị trường",
+      "🔴 FATAL - không có cap LD là rủi ro không giới hạn, cần yêu cầu thêm cap trước khi ký",
+      "Chỉ là rủi ro lý thuyết - không cần quan tâm nếu tự tin hoàn thành đúng tiến độ",
       "Hỏi Ban mời thầu xem có thể giảm xuống 0.1%/ngày không"
     ],
-    "correct_answer": "🔴 FATAL — không có cap LD là rủi ro không giới hạn, cần yêu cầu thêm cap trước khi ký",
-    "explanation": "Dù 0.2%/ngày có vẻ thấp, không có cap LD là rủi ro nghiêm trọng. Nếu chậm 50 ngày: LD = 2 tỷ đồng (10% contract value). Standard là cap ở 10–15%. Nên gửi clarification yêu cầu thêm cap — không phải giảm rate như D đề xuất."
+    "correct_answer": "🔴 FATAL - không có cap LD là rủi ro không giới hạn, cần yêu cầu thêm cap trước khi ký",
+    "explanation": "Dù 0.2%/ngày có vẻ thấp, không có cap LD là rủi ro nghiêm trọng. Nếu chậm 50 ngày: LD = 2 tỷ đồng (10% contract value). Standard là cap ở 10–15%. Nên gửi clarification yêu cầu thêm cap - không phải giảm rate như D đề xuất."
   },
   {
     "question": "Payment term trong SCC: \"30% upon signing, 40% upon substantial completion, 30% retained until Final Acceptance.\" Không có Advance Payment riêng. Hợp đồng 15 tỷ, thời gian thực hiện 14 tháng. Vấn đề gì?",
     "options": [
-      "Bình thường — payment theo milestone là chuẩn",
+      "Bình thường - payment theo milestone là chuẩn",
       "30% đầu tiên là advance, đủ để bắt đầu",
-      "30% bị giữ đến Final Acceptance có thể gây vấn đề cash flow nghiêm trọng — cần tính chi phí vốn vào giá",
+      "30% bị giữ đến Final Acceptance có thể gây vấn đề cash flow nghiêm trọng - cần tính chi phí vốn vào giá",
       "Không có vấn đề vì tổng vẫn 100%"
     ],
-    "correct_answer": "30% bị giữ đến Final Acceptance có thể gây vấn đề cash flow nghiêm trọng — cần tính chi phí vốn vào giá",
+    "correct_answer": "30% bị giữ đến Final Acceptance có thể gây vấn đề cash flow nghiêm trọng - cần tính chi phí vốn vào giá",
     "explanation": "30% = 4.5 tỷ bị giữ đến cuối dự án (14+ tháng). Trong 14 tháng đó, nhà thầu phải tự tài trợ toàn bộ chi phí thi công phần này. Chi phí vốn thực tế có thể là 5–8%/năm × 14 tháng × 4.5 tỷ ≈ 260–420 triệu. Nếu không tính vào giá, lợi nhuận bị ăn mòn đáng kể."
   }
 ]$sup_quiz_1$::jsonb,
@@ -2890,8 +2890,8 @@ Retention: 10% until end of Defects Liability Period (24 months)
 ),
 (
   'addendum-management-quan-ly-thay-doi',
-  $sup_title_2$Addendum Management — Đừng làm hồ sơ theo bản HSMT cũ$sup_title_2$,
-  $sup_titleen_2$Addendum Management — Tracking Every Change to the Bidding Document$sup_titleen_2$,
+  $sup_title_2$Addendum Management - Đừng làm hồ sơ theo bản HSMT cũ$sup_title_2$,
+  $sup_titleen_2$Addendum Management - Tracking Every Change to the Bidding Document$sup_titleen_2$,
   2,
   'quy-trinh',
   ARRAY['addendum', 'clarification', 'version control', 'deadline', 'HSMT']::text[],
@@ -2899,10 +2899,10 @@ Retention: 10% until end of Defects Liability Period (24 months)
 - Hiểu Addendum là gì và có giá trị pháp lý như thế nào
 - Thiết lập hệ thống theo dõi Addendum xuyên suốt quá trình chuẩn bị hồ sơ
 - Xử lý đúng cách khi Addendum thay đổi requirement hoặc deadline
-- Tránh lỗi nộp hồ sơ theo HSMT cũ — một trong những lỗi thầm lặng và nguy hiểm nhất$sup_objective_2$,
-  $sup_explanation_2$Bạn đọc HSMT kỹ, làm hồ sơ cẩn thận, chuẩn bị đủ tài liệu. Nhưng trong khi bạn đang làm, Chủ đầu tư âm thầm phát hành một Addendum — sửa đổi yêu cầu kỹ thuật, thay đổi deadline, hoặc cập nhật biểu mẫu.
+- Tránh lỗi nộp hồ sơ theo HSMT cũ - một trong những lỗi thầm lặng và nguy hiểm nhất$sup_objective_2$,
+  $sup_explanation_2$Bạn đọc HSMT kỹ, làm hồ sơ cẩn thận, chuẩn bị đủ tài liệu. Nhưng trong khi bạn đang làm, Chủ đầu tư âm thầm phát hành một Addendum - sửa đổi yêu cầu kỹ thuật, thay đổi deadline, hoặc cập nhật biểu mẫu.
 
-Bạn không biết. Bạn nộp hồ sơ theo bản cũ. Kết quả: bị loại vì không tuân thủ yêu cầu mới nhất — dù bạn đã đọc HSMT rất kỹ.
+Bạn không biết. Bạn nộp hồ sơ theo bản cũ. Kết quả: bị loại vì không tuân thủ yêu cầu mới nhất - dù bạn đã đọc HSMT rất kỹ.
 
 > "Addendum không báo cho bạn. Bạn phải tự đi tìm nó."$sup_explanation_2$,
   $sup_content_2$### Addendum là gì và tại sao quan trọng?
@@ -2945,15 +2945,15 @@ Thời điểm nguy hiểm nhất: cuối tuần, ngày lễ, và 48 giờ trư�
 
 ---
 
-**Addendum Tracker — Template**
+**Addendum Tracker - Template**
 
 ```
-ADDENDUM TRACKER — [Tên gói thầu]
+ADDENDUM TRACKER - [Tên gói thầu]
 
 | # | Ngày phát hành | Nội dung tóm tắt | Ảnh hưởng đến hồ sơ | Đã cập nhật? | Người xử lý |
 |---|----------------|-----------------|---------------------|-------------|------------|
 | 01 | 10/07/2024 | Sửa thời hạn hiệu lực bảo lãnh từ 120 ngày lên 150 ngày | Cần xin lại thư bảo lãnh mới | ✅ Xong | Nguyễn A |
-| 02 | 15/07/2024 | Thêm Form 6A — cam kết nhân sự key personnel | Cần điền thêm Form 6A, ký và đóng dấu | ✅ Xong | Trần B |
+| 02 | 15/07/2024 | Thêm Form 6A - cam kết nhân sự key personnel | Cần điền thêm Form 6A, ký và đóng dấu | ✅ Xong | Trần B |
 | 03 | 18/07/2024 | Sửa yêu cầu kinh nghiệm: từ 3 hợp đồng xuống còn 2 hợp đồng | Hồ sơ kinh nghiệm không cần thay đổi | ✅ Xong | Lê C |
 ```
 
@@ -2993,11 +2993,11 @@ Thực hiện thay đổi cần thiết. Sau khi update: verify lại toàn bộ
 Hai trường hợp:
 
 **Gia hạn deadline:**
-- Tốt cho bạn — có thêm thời gian
+- Tốt cho bạn - có thêm thời gian
 - Nhưng nếu không biết: bạn có thể vẫn nộp theo deadline cũ → không sai, nhưng lãng phí thời gian chuẩn bị
 
 **Rút ngắn deadline:**
-- Nguy hiểm — nếu không biết: nộp trễ và bị loại
+- Nguy hiểm - nếu không biết: nộp trễ và bị loại
 - Hiếm gặp nhưng đã xảy ra trong thực tế
 
 **Action ngay khi thấy deadline thay đổi:**
@@ -3009,30 +3009,30 @@ Hai trường hợp:
 
 ### Tình huống đặc biệt: Addendum phát hành sát deadline
 
-Chủ đầu tư phát hành Addendum 24–48 tiếng trước deadline — không phải hiếm.
+Chủ đầu tư phát hành Addendum 24–48 tiếng trước deadline - không phải hiếm.
 
 **Xử lý:**
 
 1. Đọc ngay, đánh giá impact
 2. Nếu thay đổi nhỏ (sửa form, đính chính lỗi đánh máy): cập nhật và nộp theo kế hoạch
-3. Nếu thay đổi lớn (sửa yêu cầu kỹ thuật, thêm tài liệu mới): xem xét gửi email cho Chủ đầu tư hỏi về khả năng gia hạn — có căn cứ pháp lý vì Addendum quá sát deadline
+3. Nếu thay đổi lớn (sửa yêu cầu kỹ thuật, thêm tài liệu mới): xem xét gửi email cho Chủ đầu tư hỏi về khả năng gia hạn - có căn cứ pháp lý vì Addendum quá sát deadline
 
 ---
 
 ## 4. Ví dụ thực tế
 
-**Timeline gói thầu xây lắp — 30 ngày chuẩn bị:**
+**Timeline gói thầu xây lắp - 30 ngày chuẩn bị:**
 
 ```
 Ngày 1:   Nhận HSMT
-Ngày 5:   Addendum 01 — Đính chính lỗi trong bảng khối lượng BOQ (ít ảnh hưởng)
-Ngày 12:  Addendum 02 — Thêm yêu cầu chứng chỉ ISO 14001 cho nhà thầu
+Ngày 5:   Addendum 01 - Đính chính lỗi trong bảng khối lượng BOQ (ít ảnh hưởng)
+Ngày 12:  Addendum 02 - Thêm yêu cầu chứng chỉ ISO 14001 cho nhà thầu
           → IMPACT CAO: Cần kiểm tra ngay công ty có ISO 14001 không
           → Nếu không có: GAP mới xuất hiện sau khi đã quyết định GO
-Ngày 20:  Addendum 03 — Trả lời clarification của nhà thầu khác về định nghĩa "similar work"
+Ngày 20:  Addendum 03 - Trả lời clarification của nhà thầu khác về định nghĩa "similar work"
           → Thông tin quan trọng: định nghĩa rõ hơn có lợi cho mình
-Ngày 25:  Addendum 04 — Gia hạn deadline thêm 7 ngày
-          → Thêm thời gian — update lịch ngay
+Ngày 25:  Addendum 04 - Gia hạn deadline thêm 7 ngày
+          → Thêm thời gian - update lịch ngay
 ```
 
 → Kết quả: Addendum 02 là quan trọng nhất và cần xử lý ngay. Nhà thầu không theo dõi hàng ngày sẽ bỏ sót và nộp hồ sơ thiếu chứng chỉ ISO 14001.
@@ -3071,7 +3071,7 @@ Ngày 25:  Addendum 04 — Gia hạn deadline thêm 7 ngày
   {
     "question": "Bạn nhận được Addendum 03, phát hành 3 ngày trước deadline, thay đổi yêu cầu kinh nghiệm từ \"3 hợp đồng tương tự\" xuống còn \"2 hợp đồng tương tự\". Công ty bạn có 2 hợp đồng đủ tiêu chí. Bạn làm gì?",
     "options": [
-      "Không cần làm gì — yêu cầu thấp hơn trước, hồ sơ vẫn đủ điều kiện",
+      "Không cần làm gì - yêu cầu thấp hơn trước, hồ sơ vẫn đủ điều kiện",
       "Kiểm tra lại hồ sơ kinh nghiệm hiện tại xem có cần cập nhật gì không, và xác nhận 2 hợp đồng đang claim là đúng theo định nghĩa mới trong Addendum",
       "Thêm vào hồ sơ thêm 1 hợp đồng nữa cho chắc",
       "Gửi email hỏi Chủ đầu tư xác nhận mình đủ điều kiện"
@@ -3082,7 +3082,7 @@ Ngày 25:  Addendum 04 — Gia hạn deadline thêm 7 ngày
   {
     "question": "Addendum 01 phát hành ngày 5/7, thay đổi bid validity từ 90 ngày lên 120 ngày. Thư bảo lãnh bạn đã xin có hiệu lực đến 14/10 (tính cho 90 ngày + 30 ngày buffer từ deadline 15/7). Bạn cần làm gì?",
     "options": [
-      "Không cần làm gì — 14/10 vẫn là sau deadline nộp thầu",
+      "Không cần làm gì - 14/10 vẫn là sau deadline nộp thầu",
       "Tính lại: Bid validity 120 ngày từ 15/7 = hết hạn 12/11. Thư bảo lãnh cần hiệu lực đến ít nhất 12/12 (thêm 30 ngày). Cần xin thư bảo lãnh mới.",
       "Hỏi Chủ đầu tư xem thư bảo lãnh cũ có được chấp nhận không",
       "Nộp thư bảo lãnh cũ và đính kèm note giải thích"
@@ -3120,9 +3120,9 @@ from (values
   null::text,
   $sup_update_quiz_0$[
   {
-    "question": "HSMT yêu cầu người ký Đơn dự thầu phải là \"người có thẩm quyền theo quy định pháp luật\". Giám đốc công ty bạn đang công tác nước ngoài — không thể ký trực tiếp. Phó Giám đốc sẵn sàng ký. Bạn xử lý thế nào?",
+    "question": "HSMT yêu cầu người ký Đơn dự thầu phải là \"người có thẩm quyền theo quy định pháp luật\". Giám đốc công ty bạn đang công tác nước ngoài - không thể ký trực tiếp. Phó Giám đốc sẵn sàng ký. Bạn xử lý thế nào?",
     "options": [
-      "Để Phó GĐ ký trực tiếp — chức danh Phó GĐ là đủ thẩm quyền",
+      "Để Phó GĐ ký trực tiếp - chức danh Phó GĐ là đủ thẩm quyền",
       "Chuẩn bị Giấy ủy quyền từ GĐ cho Phó GĐ, công chứng đúng theo quy định, đính kèm vào hồ sơ",
       "Để GĐ ký scan và gửi qua email, in ra đính vào hồ sơ",
       "Hỏi Ban mời thầu xem chữ ký Phó GĐ có được chấp nhận không"
@@ -3151,13 +3151,13 @@ from (values
 ),
 (
   'quick-scan-hsmt-5-phut',
-  $sup_update_content_2$### Framework Quick Scan — 5 bước (theo thứ tự này)
+  $sup_update_content_2$### Framework Quick Scan - 5 bước (theo thứ tự này)
 
 Luôn check theo đúng thứ tự. Nếu bước nào fail → dừng lại, không cần check tiếp.
 
 ---
 
-#### Bước 1: Điều kiện tham gia — "Mình có được phép dự không?"
+#### Bước 1: Điều kiện tham gia - "Mình có được phép dự không?"
 
 Tìm ở: Mục "Eligibility", "Điều kiện tham gia", "Tư cách nhà thầu" (thường ở đầu HSMT hoặc Section 2).
 
@@ -3171,7 +3171,7 @@ Cần check:
 
 ---
 
-#### Bước 2: Bảo lãnh dự thầu — "Mình có lo được tiền không?"
+#### Bước 2: Bảo lãnh dự thầu - "Mình có lo được tiền không?"
 
 Tìm ở: Mục "Bid Security", "Bảo đảm dự thầu".
 
@@ -3185,7 +3185,7 @@ Cần check:
 
 ---
 
-#### Bước 3: Kinh nghiệm tương tự — "Mình có đủ hồ sơ chứng minh không?"
+#### Bước 3: Kinh nghiệm tương tự - "Mình có đủ hồ sơ chứng minh không?"
 
 Tìm ở: Mục "Experience", "Kinh nghiệm tương tự", "Similar Contracts".
 
@@ -3199,7 +3199,7 @@ Cần check:
 
 ---
 
-#### Bước 4: Deadline — "Mình có đủ thời gian làm không?"
+#### Bước 4: Deadline - "Mình có đủ thời gian làm không?"
 
 Cần check:
 - Ngày nộp hồ sơ (deadline)
@@ -3216,7 +3216,7 @@ Cần check:
 
 ---
 
-#### Bước 5: Red flags & Suspicious Clauses — "Có bẫy không?"
+#### Bước 5: Red flags & Suspicious Clauses - "Có bẫy không?"
 
 Một số dấu hiệu cần cảnh giác:
 
@@ -3233,7 +3233,7 @@ Một số dấu hiệu cần cảnh giác:
 
 ---
 
-#### Bước 6: Commercial Risk — "Có thắng mà vẫn thua không?"
+#### Bước 6: Commercial Risk - "Có thắng mà vẫn thua không?"
 
 🟠 Đây là check mà người mới hay bỏ qua nhất.
 
@@ -3251,7 +3251,7 @@ Một gói thầu có thể **technically doable** nhưng **commercially suicida
 
 ---
 
-#### Bước 7: Scope Clarity — "Mình biết mình đang làm gì không?"
+#### Bước 7: Scope Clarity - "Mình biết mình đang làm gì không?"
 
 Scope mơ hồ = risk variation order và tranh chấp sau này. Check:
 
@@ -3265,7 +3265,7 @@ Scope mơ hồ = risk variation order và tranh chấp sau này. Check:
 ### Template Quick Scan
 
 ```
-QUICK SCAN — [Tên gói thầu]
+QUICK SCAN - [Tên gói thầu]
 Ngày check: ___________
 Người check: ___________
 
@@ -3345,17 +3345,17 @@ Action tiếp theo: ___________
 
 ## Người làm thầu lâu năm nghĩ khác gì?
 
-Quick Scan không chỉ là checklist — nó là cách tư duy. Đây là sự khác biệt thực sự:
+Quick Scan không chỉ là checklist - nó là cách tư duy. Đây là sự khác biệt thực sự:
 
 | Người mới nghĩ | Người làm thầu lâu năm nghĩ |
 |---|---|
 | "Mình cố gắng là làm được" | "Win probability có đáng để burn 3 tuần nguồn lực không?" |
-| "Thiếu 1 hợp đồng chắc Chủ đầu tư thông cảm" | "Qualification threshold thường binary — có hoặc không. Không có vùng xám." |
+| "Thiếu 1 hợp đồng chắc Chủ đầu tư thông cảm" | "Qualification threshold thường binary - có hoặc không. Không có vùng xám." |
 | "Còn 10 ngày là đủ rồi" | "10 ngày với hồ sơ EPC phức tạp là cực ngắn. Timeline thực tế là 8 ngày vì phải chờ bảo lãnh." |
-| "Bỏ qua red flag đó đi, làm trước" | "Red flag là tín hiệu — đọc kỹ hơn hoặc hỏi clarification trước khi quyết định." |
+| "Bỏ qua red flag đó đi, làm trước" | "Red flag là tín hiệu - đọc kỹ hơn hoặc hỏi clarification trước khi quyết định." |
 | "Gói này mình làm được kỹ thuật" | "Technically doable nhưng commercial terms có suicide không?" |
 
-> Người làm thầu lâu năm không làm hồ sơ tốt hơn vì họ giỏi hơn. Họ không làm những gói thầu không nên làm — và dồn toàn lực cho những gói có cơ hội thật sự.
+> Người làm thầu lâu năm không làm hồ sơ tốt hơn vì họ giỏi hơn. Họ không làm những gói thầu không nên làm - và dồn toàn lực cho những gói có cơ hội thật sự.
 
 ## 4. Ví dụ thực tế
 
@@ -3437,7 +3437,7 @@ Cần chuẩn bị:
 - Bản sao chứng chỉ hành nghề
 - Xác nhận cam kết tham gia dự án
 
-**Cảnh báo:** Key personnel phải "cam kết tham gia" — nếu họ đang trong hợp đồng khác, đây là GAP cần xử lý.
+**Cảnh báo:** Key personnel phải "cam kết tham gia" - nếu họ đang trong hợp đồng khác, đây là GAP cần xử lý.
 
 ---
 
@@ -3454,7 +3454,7 @@ Các yêu cầu thường gặp:
 ### Template GAP Analysis
 
 ```
-GAP ANALYSIS — [Tên gói thầu]
+GAP ANALYSIS - [Tên gói thầu]
 Ngày: ___________
 
 | Nhóm | Yêu cầu HSMT | Tình trạng công ty | GAP | Mức độ | Hướng xử lý |
@@ -3476,7 +3476,7 @@ Ngày: ___________
 
 ---
 
-### Readiness Score — Đọc kết quả GAP bằng số
+### Readiness Score - Đọc kết quả GAP bằng số
 
 Sau khi điền GAP Analysis, tính điểm theo 4 nhóm:
 
@@ -3485,30 +3485,30 @@ Sau khi điền GAP Analysis, tính điểm theo 4 nhóm:
 | Điểm | 100 | 75 | 50 | 25 | 0 |
 
 **Ngưỡng quyết định:**
-- ≥ 85: GO — rủi ro thấp
-- 70–84: Conditional GO — xử lý GAP trước khi nộp
-- 50–69: Conditional GO có điều kiện — cân nhắc JV
+- ≥ 85: GO - rủi ro thấp
+- 70–84: Conditional GO - xử lý GAP trước khi nộp
+- 50–69: Conditional GO có điều kiện - cân nhắc JV
 - < 50: NO-GO hoặc cần JV partner mạnh
 
-> Readiness Score không phải con số tuyệt đối. Nó là công cụ để team cùng nhìn thấy bức tranh rủi ro — và ưu tiên xử lý đúng chỗ.
+> Readiness Score không phải con số tuyệt đối. Nó là công cụ để team cùng nhìn thấy bức tranh rủi ro - và ưu tiên xử lý đúng chỗ.
 
 ### Cách xử lý từng loại GAP
 
-#### GAP THẤP — Tự xử lý
+#### GAP THẤP - Tự xử lý
 Ví dụ: thiếu một số tài liệu, format CV chưa chuẩn
 → Xử lý trong nội bộ, không cần đối tác
 
-#### GAP TRUNG BÌNH — Cần subcontractor
+#### GAP TRUNG BÌNH - Cần subcontractor
 Ví dụ: thiếu 1 hợp đồng kinh nghiệm hoặc thiếu một loại thiết bị
 → Ký hợp đồng subcontract với đơn vị có kinh nghiệm
 → Lưu ý: không phải HSMT nào cũng chấp nhận subcontract cho phần core
 
-#### GAP CAO — Cân nhắc JV
+#### GAP CAO - Cân nhắc JV
 Ví dụ: thiếu doanh thu, thiếu nhiều hợp đồng tương tự
 → Liên danh với đối tác bổ sung năng lực
 → Cần thỏa thuận JV rõ ràng trước khi nộp hồ sơ
 
-#### GAP FATAL — NO-GO
+#### GAP FATAL - NO-GO
 Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu tư cách pháp lý
 → Không thể xử lý trong thời gian còn lại
 → Quyết định NO-GO, chuyển nguồn lực sang gói khác
@@ -3528,15 +3528,15 @@ Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu
 | Chứng chỉ tư vấn PCCC cấp tỉnh | Có | Không có GAP | - | OK |
 | PM: ≥ 8 năm kinh nghiệm PCCC | PM: 5 năm | -3 năm | CAO | Tìm PM bên ngoài hoặc JV |
 
-→ **Kết luận:** Conditional GO — cần xử lý 2 GAP trước khi quyết định nộp.
+→ **Kết luận:** Conditional GO - cần xử lý 2 GAP trước khi quyết định nộp.
 
 ---$sup_update_content_3$,
   $sup_update_quiz_3$[
   {
     "question": "GAP Analysis cho thấy: Tài chính OK, Pháp lý OK, Kỹ thuật thiếu 1 hợp đồng tương tự (GAP trung bình), Nhân sự thiếu PM đủ tiêu chí (GAP cao). Deadline còn 21 ngày. Bạn nên:",
     "options": [
-      "Quyết định NO-GO — có 2 GAP là quá nhiều",
-      "GO luôn — 21 ngày đủ xử lý",
+      "Quyết định NO-GO - có 2 GAP là quá nhiều",
+      "GO luôn - 21 ngày đủ xử lý",
       "Xử lý nhân sự trước (GAP cao nhất), sau đó xem xét lại quyết định trong 3–5 ngày tới",
       "Tìm JV partner có thể bổ sung cả kinh nghiệm lẫn nhân sự"
     ],
@@ -3547,22 +3547,22 @@ Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu
 ),
 (
   'checklist-truoc-khi-nop',
-  $sup_update_content_4$### Checklist đầy đủ — 5 nhóm
+  $sup_update_content_4$### Checklist đầy đủ - 5 nhóm
 
 ---
 
 #### NHÓM 1: Hồ sơ pháp lý
 
-- [ ] Giấy phép kinh doanh — bản sao công chứng còn hiệu lực
+- [ ] Giấy phép kinh doanh - bản sao công chứng còn hiệu lực
 - [ ] Giấy phép hành nghề / chứng chỉ đặc thù (nếu yêu cầu)
 - [ ] Điều lệ công ty (nếu yêu cầu)
 - [ ] Quyết định bổ nhiệm người đại diện pháp luật
-- [ ] Giấy ủy quyền ký (nếu người ký không phải người đại diện pháp luật) — công chứng
+- [ ] Giấy ủy quyền ký (nếu người ký không phải người đại diện pháp luật) - công chứng
 - [ ] Tất cả trang có chữ ký: đúng người, đúng chức danh
 - [ ] Tất cả trang có con dấu: đúng vị trí, dấu rõ ràng, không bị lệch
 - [ ] Số bộ hồ sơ: đúng số lượng HSMT yêu cầu (vd: 1 gốc + 2 bản sao)
 
-**Note:** Một số HSMT yêu cầu công chứng toàn bộ bộ pháp lý — đọc kỹ và không tự suy diễn.
+**Note:** Một số HSMT yêu cầu công chứng toàn bộ bộ pháp lý - đọc kỹ và không tự suy diễn.
 
 ---
 
@@ -3600,7 +3600,7 @@ Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu
 - [ ] Đơn vị tiền tệ: đúng và nhất quán trong toàn bộ bảng giá
 - [ ] Chữ ký và đóng dấu trên bảng giá
 - [ ] Phụ lục giá (nếu có): đầy đủ, nhất quán với bảng giá chính
-- [ ] Thuế: đã bao gồm hay chưa — phải khớp với yêu cầu HSMT
+- [ ] Thuế: đã bao gồm hay chưa - phải khớp với yêu cầu HSMT
 - [ ] Giá có điền bằng chữ (nếu yêu cầu): khớp với số
 
 **Warning:** Sai số học trong bảng giá (vd: cộng sai) có thể bị coi là lỗi kỹ thuật. Luôn cộng lại bằng tay hoặc excel riêng trước khi nộp.
@@ -3624,15 +3624,15 @@ Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu
 
 #### NHÓM 6: Version Control
 
-🟠 HIGH RISK — Đây là nhóm check mà nhiều team bỏ qua và là nguồn gốc của nhiều lỗi thầm lặng nhất.
+🟠 HIGH RISK - Đây là nhóm check mà nhiều team bỏ qua và là nguồn gốc của nhiều lỗi thầm lặng nhất.
 
-- [ ] File nộp là **phiên bản final** — không phải draft hoặc phiên bản cũ
+- [ ] File nộp là **phiên bản final** - không phải draft hoặc phiên bản cũ
 - [ ] Không còn **Track Changes** hoặc comment trong file Word/Excel
-- [ ] File pricing là **số final đã lock** — không phải bản đang chỉnh sửa
+- [ ] File pricing là **số final đã lock** - không phải bản đang chỉnh sửa
 - [ ] Không còn placeholder text ("TBD", "insert here", "XX") trong bất kỳ file nào
-- [ ] **Addendum mới nhất** đã được tích hợp vào hồ sơ — kiểm tra ngày phát hành
+- [ ] **Addendum mới nhất** đã được tích hợp vào hồ sơ - kiểm tra ngày phát hành
 - [ ] Tên file: đúng phiên bản cuối (không phải "final_v2_thật_sự_cuối.pdf")
-- [ ] File kỹ thuật và file tài chính **nhất quán với nhau** — không có số liệu mâu thuẫn
+- [ ] File kỹ thuật và file tài chính **nhất quán với nhau** - không có số liệu mâu thuẫn
 
 **Thực tế:** Lỗi version control thường xảy ra khi nhiều người cùng chỉnh sửa file. Assign 1 người duy nhất chịu trách nhiệm merge và lock file final.
 
@@ -3640,11 +3640,11 @@ Ví dụ: không có giấy phép hành nghề, BCTC chưa kiểm toán, thiếu
 
 Trước khi đóng gói lần cuối, dừng lại 30 phút và check 5 điểm này:
 
-1. **Chữ ký & con dấu** — Lướt qua từng trang, kiểm tra chỗ cần ký đã ký chưa
-2. **Số tiền bảo lãnh** — Đọc lại thư bảo lãnh, đối chiếu với HSMT
-3. **Tổng giá trong đơn dự thầu** — Cộng lại một lần nữa
-4. **Số bộ hồ sơ** — Đếm lại đủ số bộ gốc + sao
-5. **Giờ nộp & địa điểm** — Xác nhận lần cuối không có thay đổi trong Addendum
+1. **Chữ ký & con dấu** - Lướt qua từng trang, kiểm tra chỗ cần ký đã ký chưa
+2. **Số tiền bảo lãnh** - Đọc lại thư bảo lãnh, đối chiếu với HSMT
+3. **Tổng giá trong đơn dự thầu** - Cộng lại một lần nữa
+4. **Số bộ hồ sơ** - Đếm lại đủ số bộ gốc + sao
+5. **Giờ nộp & địa điểm** - Xác nhận lần cuối không có thay đổi trong Addendum
 
 ---
 

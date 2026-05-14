@@ -1,7 +1,7 @@
 import Anthropic, { APIError } from "@anthropic-ai/sdk";
 
 // ============================================================
-// BidMentor — Claude API Client
+// BidMentor - Claude API Client
 // All AI calls go through here. Never call API directly in components.
 // ============================================================
 
@@ -51,7 +51,7 @@ export async function callClaude(options: AICallOptions): Promise<AIResult> {
       model: response.model,
     };
 
-    // Log usage (fire and forget — don't block)
+    // Log usage (fire and forget - don't block)
     logAIUsage(feature, result).catch(console.error);
 
     return result;
@@ -66,7 +66,7 @@ export async function callClaude(options: AICallOptions): Promise<AIResult> {
   }
 }
 
-// Streaming call — returns a ReadableStream for real-time UI
+// Streaming call - returns a ReadableStream for real-time UI
 export async function callClaudeStream(
   options: AICallOptions
 ): Promise<ReadableStream<string>> {
@@ -123,7 +123,7 @@ export function parseAIJson<T>(rawContent: string): T {
   }
 }
 
-// Usage logging (sends to Supabase — called fire-and-forget)
+// Usage logging (sends to Supabase - called fire-and-forget)
 async function logAIUsage(feature: string, result: AIResult): Promise<void> {
   // Dynamically import to avoid circular deps
   const { createClient } = await import("@/lib/supabase/server");

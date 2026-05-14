@@ -124,73 +124,73 @@ const ACTION_NEXT_STEPS: Record<string, ActionNextStepData> = {
 
 const CASE_FAILS: Record<string, CaseFailData> = {
   "top-loi-bi-loai-chi-tu": {
-    title: "Hồ sơ kỹ thuật tốt nhất — vẫn bị loại vòng đầu",
+    title: "Hồ sơ kỹ thuật tốt nhất - vẫn bị loại vòng đầu",
     story:
       "Một nhà thầu chuẩn bị hồ sơ kỹ thuật xuất sắc trong 3 tuần. Đến ngày mở thầu, Ban mời thầu phát hiện người ký Đơn dự thầu là Phó Giám đốc, nhưng Giấy ủy quyền ký đính kèm chưa được công chứng theo yêu cầu HSMT. Hồ sơ bị loại ở vòng kiểm tra sơ bộ.",
     lesson: "Fatal errors không quan tâm đến chất lượng kỹ thuật của bạn.",
   },
   "bao-lanh-du-thau-khong-duoc-sai": {
-    title: "Sai tên — mất hết",
+    title: "Sai tên - mất hết",
     story:
       'Nhà thầu chuẩn bị đủ hồ sơ kỹ thuật và tài chính. Thư bảo lãnh ngân hàng đúng số tiền, đúng thời hạn, nhưng phần "Beneficiary" ghi tên Ban Quản lý Dự án, trong khi HSMT yêu cầu ghi tên Chủ đầu tư. Hồ sơ bị loại ngay vòng kiểm tra bảo lãnh.',
     lesson:
-      'Bảo lãnh không có khái niệm "gần đúng" — sai một chữ là sai hoàn toàn.',
+      'Bảo lãnh không có khái niệm "gần đúng" - sai một chữ là sai hoàn toàn.',
   },
   "kinh-nghiem-tuong-tu-yeu-cau-kho-nhat": {
-    title: "3 hợp đồng — nhưng chỉ tính được 1",
+    title: "3 hợp đồng - nhưng chỉ tính được 1",
     story:
       "Nhà thầu có 3 hợp đồng tương tự trong 5 năm. Khi chấm: hợp đồng thứ nhất đủ tiêu chí, hợp đồng thứ hai là subcontract không được tính, hợp đồng thứ ba không có biên bản nghiệm thu. Chỉ còn 1 hợp đồng hợp lệ trên ngưỡng yêu cầu 3.",
     lesson:
       "Số lượng hợp đồng không quan trọng bằng số hợp đồng đủ tiêu chí đúng định nghĩa của HSMT đó.",
   },
   "deadline-hieu-luc-ho-so": {
-    title: "Upload xong — nhưng trễ 7 phút",
+    title: "Upload xong - nhưng trễ 7 phút",
     story:
       "Nhà thầu hoàn thành hồ sơ đúng hạn, bắt đầu upload lúc 8:30 với deadline 9:00. File cuối upload xong lúc 8:58, nhưng khi bấm Submit, hệ thống xử lý đến 9:07 mới confirm. Hồ sơ bị ghi nhận nộp lúc 9:07.",
     lesson:
-      "Deadline không phải là lúc bạn bấm nút — là lúc hệ thống confirm. Upload trước ít nhất 2 tiếng.",
+      "Deadline không phải là lúc bạn bấm nút - là lúc hệ thống confirm. Upload trước ít nhất 2 tiếng.",
   },
   "quy-trinh-clarification": {
-    title: "Addendum gửi lúc 5 giờ chiều — không ai đọc",
+    title: "Addendum gửi lúc 5 giờ chiều - không ai đọc",
     story:
       "Chủ đầu tư phát hành Addendum sửa đổi yêu cầu kinh nghiệm vào 17:00 ngày thứ Sáu trước deadline thứ Hai. Nhà thầu không kiểm tra hệ thống cuối tuần, làm hồ sơ theo HSMT gốc và bị loại vì không đáp ứng yêu cầu mới.",
     lesson:
       "Addendum có thể đến bất cứ lúc nào. Kiểm tra hệ thống hàng ngày trong suốt thời gian chuẩn bị hồ sơ.",
   },
   "quick-scan-hsmt-5-phut": {
-    title: "Upload xong — nhưng trễ 7 phút",
+    title: "Upload xong - nhưng trễ 7 phút",
     story:
       "Nhà thầu hoàn thành hồ sơ đúng hạn, bắt đầu upload lúc 8:30 với deadline 9:00. File cuối upload xong lúc 8:58, nhưng khi bấm Submit, hệ thống xử lý đến 9:07 mới confirm. Hồ sơ bị ghi nhận nộp lúc 9:07.",
     lesson:
       "Timeline risk phải được phát hiện ngay từ Quick Scan, không đợi đến ngày nộp mới xử lý.",
   },
   "gap-analysis-nang-luc": {
-    title: "3 hợp đồng — nhưng chỉ tính được 1",
+    title: "3 hợp đồng - nhưng chỉ tính được 1",
     story:
       "Nhà thầu tưởng mình có 3 hợp đồng tương tự, nhưng khi đối chiếu theo HSMT chỉ có 1 hợp đồng đủ điều kiện. Một hợp đồng là subcontract, một hợp đồng thiếu nghiệm thu.",
     lesson:
       "GAP Analysis phải kiểm tra bằng chứng hợp lệ, không chỉ đếm số lượng tài liệu đang có.",
   },
   "compliance-matrix-ky-nang-core": {
-    title: "Comply với tất cả — và bị loại",
+    title: "Comply với tất cả - và bị loại",
     story:
       'Nhà thầu điền "Comply" cho toàn bộ 45 yêu cầu kỹ thuật, nhưng cột tài liệu chứng minh để trống hoặc chỉ ghi chung "xem hồ sơ kỹ thuật". Ban mời thầu không thể verify và coi như không có bằng chứng.',
     lesson:
       '"Comply" mà không có tài liệu chứng minh = lời nói suông trong đấu thầu.',
   },
   "reading-scc-dieu-khoan-nguy-hiem": {
-    title: "Thắng thầu — thua hợp đồng",
+    title: "Thắng thầu - thua hợp đồng",
     story:
       "Nhà thầu thắng gói 30 tỷ, triển khai chậm 3 tháng. SCC quy định LD 0.1%/ngày và không có cap. Tổng LD 2.7 tỷ đồng, gần bằng lợi nhuận toàn dự án.",
     lesson:
-      "SCC nguy hiểm nhất không phải là SCC bạn đọc — mà là SCC bạn không đọc.",
+      "SCC nguy hiểm nhất không phải là SCC bạn đọc - mà là SCC bạn không đọc.",
   },
   "addendum-management-quan-ly-thay-doi": {
-    title: "Addendum phát hành thứ Sáu — nộp hồ sơ thứ Hai",
+    title: "Addendum phát hành thứ Sáu - nộp hồ sơ thứ Hai",
     story:
       "Chủ đầu tư phát hành Addendum 02 lúc 17:30 thứ Sáu, thay đổi mẫu Bid Form. Deadline là sáng thứ Hai. Nhà thầu không kiểm tra cuối tuần và nộp hồ sơ với form cũ.",
     lesson:
-      "Addendum phát hành cuối tuần không phải tai nạn — đó là thực tế. Phải có người kiểm tra hệ thống khi gần deadline.",
+      "Addendum phát hành cuối tuần không phải tai nạn - đó là thực tế. Phải có người kiểm tra hệ thống khi gần deadline.",
   },
 };
 
@@ -203,7 +203,7 @@ const READINESS_SCORES: Record<string, ReadinessScoreData> = {
       { label: "Pháp lý", score: 100, note: "Không có GAP" },
     ],
     conclusion: "CONDITIONAL GO",
-    priority: "Nhân sự (50) — ưu tiên xử lý trước",
+    priority: "Nhân sự (50) - ưu tiên xử lý trước",
   },
 };
 

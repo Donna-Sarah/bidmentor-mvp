@@ -8,7 +8,7 @@ import {
 } from "@/lib/ai/prompts/quick-scan";
 
 // ---------------------------------------------------------------------------
-// HTTP body — what the client sends
+// HTTP body - what the client sends
 // ---------------------------------------------------------------------------
 
 const requestBodySchema = z.object({
@@ -23,7 +23,7 @@ const requestBodySchema = z.object({
 });
 
 // ---------------------------------------------------------------------------
-// AI JSON — matches `QUICK_SCAN_SYSTEM_PROMPT` (snake_case, flexible arrays)
+// AI JSON - matches `QUICK_SCAN_SYSTEM_PROMPT` (snake_case, flexible arrays)
 // ---------------------------------------------------------------------------
 
 const quickScanAiSchema = z.object({
@@ -67,7 +67,7 @@ const quickScanAiSchema = z.object({
 });
 
 // ---------------------------------------------------------------------------
-// API response — stable contract for the frontend
+// API response - stable contract for the frontend
 // ---------------------------------------------------------------------------
 
 const apiResponseSchema = z.object({
@@ -94,7 +94,7 @@ function mapAiJsonToApiResponse(
 
   for (const r of ai.high_risks) {
     const label = r.category ? `[${r.category}] ` : "";
-    const mit = r.mitigation?.trim() ? ` — Giảm thiểu: ${r.mitigation.trim()}` : "";
+    const mit = r.mitigation?.trim() ? ` - Giảm thiểu: ${r.mitigation.trim()}` : "";
     const line = `${label}${r.description.trim()}${mit}`.trim();
     if (line) risks.push(line);
   }
@@ -128,7 +128,7 @@ function mapAiJsonToApiResponse(
 }
 
 /**
- * Opening this URL in a browser sends GET — use POST for a real scan.
+ * Opening this URL in a browser sends GET - use POST for a real scan.
  */
 export function GET(): NextResponse {
   return NextResponse.json({
@@ -136,12 +136,12 @@ export function GET(): NextResponse {
     hint: "Mở tab này bằng GET chỉ để kiểm tra route. Phân tích thật cần POST + JSON body.",
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: { documentText: "string — nội dung / đoạn HSMT cần quét nhanh" },
+    body: { documentText: "string - nội dung / đoạn HSMT cần quét nhanh" },
   });
 }
 
 /**
- * Quick Scan — phân tích nhanh HSMT (GO / NO-GO / CAUTION, fatal errors, risks, workload).
+ * Quick Scan - phân tích nhanh HSMT (GO / NO-GO / CAUTION, fatal errors, risks, workload).
  * POST JSON: `{ "documentText": string }`
  */
 export async function POST(request: Request): Promise<NextResponse> {

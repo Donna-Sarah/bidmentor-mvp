@@ -78,7 +78,7 @@ export default function AnalyzePage() {
 
       setResult(data);
     } catch {
-      setError("Network error — check your connection and try again.");
+      setError("Network error - check your connection and try again.");
     } finally {
       setLoading(false);
     }
@@ -99,7 +99,7 @@ export default function AnalyzePage() {
               Quick Scan
             </h1>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-              Paste HSMT text for a fast GO / NO-GO style read — fatal issues,
+              Paste HSMT text for a fast GO / NO-GO style read - fatal issues,
               risks, and a rough workload sense. AI suggests; you decide.
             </p>
           </div>

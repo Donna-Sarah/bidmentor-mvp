@@ -47,7 +47,7 @@ export function ReadinessScore({
       </div>
       <div className="mt-4 rounded-lg bg-gray-50 p-3 text-sm leading-relaxed text-gray-800">
         <p>
-          <strong>Tổng thể:</strong> {average}/100 — {conclusion}
+          <strong>Tổng thể:</strong> {average}/100 - {conclusion}
         </p>
         {priority && (
           <p className="mt-1">
