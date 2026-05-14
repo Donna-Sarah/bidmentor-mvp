@@ -1,0 +1,223 @@
+---
+description: BidMentor project rules — AI context, coding standards, architecture decisions
+globs: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
+alwaysApply: true
+---
+
+# BidMentor — Cursor AI Rules
+
+## Sản phẩm là gì
+
+BidMentor là AI mentor giúp người làm đấu thầu tại Việt Nam:
+- Học đấu thầu thực chiến (không phải học thuật)
+- Đọc hiểu HSMT (Hồ Sơ Mời Thầu) nhanh hơn
+- Phân tích requirement và detect fatal errors
+- Đối chiếu năng lực công ty vs yêu cầu gói thầu
+
+**Core philosophy:** Reduce cognitive overload. Human-in-the-loop. Transparency over magic.
+
+---
+
+## Tech Stack
+
+- **Frontend:** Next.js 14+ (App Router), TypeScript, Tailwind CSS
+- **Backend:** Next.js API Routes (lean, no over-engineering)
+- **Database:** Supabase (PostgreSQL) — metadata-first, không lưu file gốc
+- **AI:** Anthropic Claude API (primary reasoning), OpenAI fallback
+- **File storage:** Không lưu HSMT. Chỉ lưu metadata + Google Drive/OneDrive links
+- **PDF parsing:** LlamaParse hoặc Azure Document Intelligence (phase analysis)
+- **Auth:** Supabase Auth
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/                        # Next.js App Router
+│   ├── (auth)/                 # Auth pages
+│   ├── (dashboard)/            # Authenticated app
+│   │   ├── learn/              # Learning module
+│   │   ├── analyze/            # HSMT Analysis module
+│   │   └── compare/            # Compare module
+│   └── api/                    # API routes
+│       ├── ai/                 # AI endpoints
+│       ├── learn/              # Learning content
+│       └── analyze/            # Analysis endpoints
+├── components/
+│   ├── ui/                     # Base UI components (shadcn-style)
+│   ├── learn/                  # Learning module components
+│   ├── analyze/                # Analysis module components
+│   └── shared/                 # Shared components
+├── lib/
+│   ├── ai/                     # AI clients, prompts, chains
+│   │   ├── claude.ts           # Claude API client
+│   │   ├── prompts/            # All system prompts
+│   │   └── chains/             # Multi-step AI workflows
+│   ├── supabase/               # Supabase client + helpers
+│   ├── types/                  # TypeScript types
+│   └── utils/                  # Utilities
+├── content/                    # Static learning content (MDX)
+│   ├── lessons/                # Bài học theo tier
+│   ├── glossary/               # Glossary entries
+│   └── templates/              # Template files
+└── hooks/                      # Custom React hooks
+```
+
+---
+
+## Coding Standards
+
+### TypeScript
+- Luôn dùng strict TypeScript — không dùng `any`
+- Define types trong `lib/types/` và import từ đó
+- Dùng `interface` cho object shapes, `type` cho unions/primitives
+
+### React / Next.js
+- Dùng Server Components by default, chỉ `"use client"` khi thật sự cần
+- Fetch data ở server level khi có thể
+- Không dùng `useEffect` để fetch data — dùng Server Components hoặc React Query
+
+### AI Calls
+- Tất cả AI calls đều qua `lib/ai/claude.ts` — không gọi API trực tiếp trong components
+- Mỗi AI feature có prompt riêng trong `lib/ai/prompts/`
+- Luôn có fallback và error handling cho AI calls
+- Luôn stream response khi UX yêu cầu real-time feedback
+
+### Database (Supabase)
+- Tất cả DB queries qua `lib/supabase/` helpers
+- Row Level Security (RLS) phải enable cho mọi table
+- Không expose sensitive queries ở client side
+
+### Error Handling
+- Dùng Result pattern hoặc try/catch nhất quán
+- Luôn log errors với context đủ để debug
+- User-facing errors phải friendly, không expose stack traces
+
+---
+
+## Module: LEARNING
+
+### Content Structure
+Bài học có 4 tầng:
+- **Tier 0:** Định hướng (đấu thầu là gì, HSMT là gì)
+- **Tier 1:** Nền tảng (hình thức, bảo lãnh, lỗi bị loại)
+- **Tier 2:** Thực chiến (Quick Scan, GAP analysis, checklist)
+- **Tier 3:** Nâng cao (liên danh, chiến lược giá)
+
+### Lesson Schema
+Mỗi bài học phải có:
+1. `objective` — Mục tiêu bài học
+2. `explanation` — Giải thích dễ hiểu (không jargon)
+3. `content` — Nội dung chi tiết
+4. `examples` — Ví dụ từ HSMT thật
+5. `common_mistakes` — Sai sót thường gặp + fatal errors
+6. `related_links` — Link bài liên quan
+7. `quiz` — Bài kiểm tra
+
+### Content Priority (Phase 1)
+- Top lỗi bị loại chí tử
+- 3 thứ check đầu tiên khi đọc HSMT
+- Bảo lãnh dự thầu
+- Kinh nghiệm tương tự
+- Deadline & hiệu lực
+- Clarification process
+- Checklist trước nộp
+
+---
+
+## Module: ANALYSIS (HSMT Analysis)
+
+### Quick Scan
+Mục tiêu: User biết GO/NO-GO trong 5-10 phút
+- Input: HSMT text/metadata
+- Output: GO/NO-GO + Risk overview + Critical requirements + Estimated workload
+- AI phải detect: fatal errors, rejection conditions, timeline risk, financial risk
+
+### Deep Analysis
+- Phân tích: tài chính, kỹ thuật, nhân sự, pháp lý, điều khoản
+- Output: requirement breakdown, risk breakdown, missing evidence, checklist, suggested actions
+
+### AI Reasoning Layer (QUAN TRỌNG)
+AI không chỉ extract — phải explain + reason + contextualize.
+Ví dụ: "3 hợp đồng tương tự" → AI giải thích: similar nature quan trọng, cần acceptance document, subcontract có thể không tính, etc.
+
+### Evidence Mapping
+Mọi kết luận AI phải:
+- Link tới page/section cụ thể trong HSMT
+- Highlight đoạn gốc
+- Cho phép user verify
+
+---
+
+## Module: COMPARE
+
+- Metadata-first: không lưu file gốc, chỉ lưu metadata + tags + reference links
+- Compare: HSMT requirements vs company capability metadata
+- Output: gap detection, suggested documents, weakness highlights, JV suggestions, readiness estimate
+
+---
+
+## Contextual Learning (Feature quan trọng nhất)
+
+Khi user đọc HSMT và hover keyword:
+- Level 1: Highlight keyword
+- Level 2: Tooltip nhỏ (giải thích + warning)
+- Level 3: Click → Panel chi tiết + link bài học
+
+Nguyên tắc: Không phá flow đọc HSMT.
+
+---
+
+## AI Prompt Guidelines
+
+Khi viết prompts cho BidMentor:
+- Luôn có system context về đấu thầu Việt Nam
+- Output phải structured (JSON hoặc markdown có section rõ ràng)
+- Phải có `reasoning` field — giải thích tại sao AI kết luận vậy
+- Phải có `evidence` field — trỏ về đoạn gốc trong HSMT
+- Phải có `risk_level` — low/medium/high/fatal
+- Không output "AI nói vậy thôi" — phải traceable
+
+---
+
+## UX Principles
+
+- **Minimal & focused** — không feature overload
+- **Reduce anxiety** — người dùng thường bị overwhelm
+- **Progressive disclosure** — hiện thông tin đúng lúc cần
+- **Practical over academic** — checklist, warning, example > lý thuyết
+- **Human-in-the-loop** — AI suggest, người dùng decide
+
+---
+
+## Terminology (Không được dịch sai)
+
+| Vietnamese | English | Ghi chú |
+|---|---|---|
+| HSMT | Bidding Documents / Tender Documents | Hồ Sơ Mời Thầu |
+| Bảo lãnh dự thầu | Bid Security / Bid Bond | |
+| Bảo lãnh thực hiện | Performance Bond | |
+| Kinh nghiệm tương tự | Similar Experience | Critical requirement |
+| Lỗi chí tử | Fatal Error / Disqualification | Bị loại ngay |
+| Liên danh | Joint Venture (JV) | |
+| Năng lực | Capacity / Capability | |
+| Clarification | Clarification | Hỏi làm rõ HSMT |
+| Compliance | Compliance | Tuân thủ yêu cầu |
+| GO/NO-GO | GO/NO-GO | Quyết định tham gia |
+
+---
+
+## What NOT to build (Phase 1)
+
+- ❌ ERP systems
+- ❌ Complex automation pipelines
+- ❌ Enterprise collaboration features
+- ❌ Heavy dashboards
+- ❌ Auto-generate full hồ sơ
+- ❌ Crawler/scraper phức tạp
+
+Focus: **20% effort → 80% value**
+---
+alwaysApply: true
+---
